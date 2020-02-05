@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "arhs-ui": [
+        "dist/arhs-ui"
+      ],
+      "arhs-ui/*": [
+        "dist/arhs-ui/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
