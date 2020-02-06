@@ -4,8 +4,8 @@ import {SharedModule} from './lib/shared/shared.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 const MODULES = [
-  //SubscriptionsModule,
-  //SharedModule,
+  SubscriptionsModule,
+  SharedModule,
 ];
 
 const DECLARATION = [

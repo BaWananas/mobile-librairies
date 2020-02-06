@@ -5,7 +5,6 @@ import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 @Component({
   selector: 'arhs-ui-basic-table',
   templateUrl: './basic-table.component.html',
-  styleUrls: ['./basic-table.component.css']
 })
 export class BasicTableComponent<T> extends BasicTableCommon<T> {
 

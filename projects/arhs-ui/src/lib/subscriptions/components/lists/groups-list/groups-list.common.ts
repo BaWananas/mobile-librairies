@@ -6,8 +6,8 @@ import {TableColumn} from '../../../../shared/models/table/TableColumn';
 
 export abstract class GroupsListCommon {
 
-  protected static columnsIds = ['id', 'associationId', 'name', 'description'];
-  protected static columnsTitles = ['#ID', '#Association', 'Name', 'Description'];
+  public static columnsIds = ['id', 'associationId', 'name', 'description'];
+  public static columnsTitles = ['#ID', '#Association', 'Name', 'Description'];
 
   protected tableFactory: ITableFactory;
   @Input() refreshEvent: EventEmitter<Group[]>;

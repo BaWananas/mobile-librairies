@@ -16,12 +16,16 @@ export class TableFactoryService implements ITableFactory {
 
   getColumns(columnsTitle: string[], dataRef: string[], footers?: FooterValue[]): ITableColumn[] {
     const columnsArray: TableColumn[] = [];
-    dataRef.forEach((value, index) => {
-      columnsArray.push(new TableColumn(value,
-        (columnsTitle.length >= index) ? columnsTitle[index] : null,
-        value,
-        (footers.length >= index) ? footers[index] : null));
-    });
+
+    if (dataRef && columnsTitle) {
+      dataRef.forEach((value, index) => {
+        columnsArray.push(new TableColumn(value,
+          (columnsTitle.length >= index) ? columnsTitle[index] : null,
+          value,
+          (footers.length >= index) ? footers[index] : null));
+      });
+    }
+
     return columnsArray;
   }
 

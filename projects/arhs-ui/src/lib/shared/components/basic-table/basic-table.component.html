@@ -1,6 +1,6 @@
 <div class="mat-elevation-z8 w-100">
   <mat-form-field *ngIf="options.filtering">
-    <input matInput (keyup)="applyFiltering($event.target.value)" placeholder="Filter">
+    <input #input matInput (keyup)="applyFiltering(input.value)" placeholder="Filter">
   </mat-form-field>
   <table mat-table [dataSource]="dataSource" style="width: 100%">
 
