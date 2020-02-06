@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {GroupsListCommon} from './groups-list.common';
 import {Group} from '../../../models/Group';
+import {TableFactoryService} from '../../../../shared/services/implementations/table-factory.service';
 
 @Component({
   selector: 'arhs-ui-groups-list',
@@ -9,8 +10,8 @@ import {Group} from '../../../models/Group';
 })
 export class GroupsListComponent extends GroupsListCommon implements OnInit {
 
-  constructor() {
-    super();
+  constructor(tableFactory: TableFactoryService) {
+    super(tableFactory);
   }
 
   // TODO
@@ -23,6 +24,9 @@ export class GroupsListComponent extends GroupsListCommon implements OnInit {
 
   // TODO
   protected destroyData(): void {
+  }
+
+  ngOnInit(): void {
   }
 
 }

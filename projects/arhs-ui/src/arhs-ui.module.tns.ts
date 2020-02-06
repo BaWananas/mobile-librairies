@@ -3,11 +3,12 @@ import {SubscriptionsModule} from './lib/subscriptions/subscriptions.module.tns'
 import {SharedModule} from './lib/shared/shared.module.tns';
 
 const MODULES = [
-  SubscriptionsModule,
-  SharedModule
+  //SubscriptionsModule,
+  //SharedModule
 ];
 
-const DECLARATION = [];
+const DECLARATION = [
+];
 
 @NgModule({
   declarations: [

@@ -1,19 +1,12 @@
-import {ITableSelection} from './ITableSelection';
 import {EventEmitter, Input, OnDestroy, OnInit} from '@angular/core';
-import {Table} from './Table';
+import {TableOptions} from './TableOptions';
+import {TableColumn} from './TableColumn';
 
-export abstract class TableOptions<T> implements OnInit, OnDestroy {
-  @Input() pagination = false;
-  @Input() paginationSorting: number[] = [1, 5, 25, 50];
-  @Input() sorting = false;
-  @Input() filtering = false;
-  @Input() selection: ITableSelection<T>;
-  @Input() footer = false;
-  @Input() stickyHeader = false;
-  @Input() stickyFooter = false;
+export abstract class TableComponent<T> implements OnInit, OnDestroy {
+  @Input() data: T[];
   @Input() refreshEvent: EventEmitter<T[]>;
-
-  public table: Table<T>;
+  @Input() columns: TableColumn[];
+  @Input() options: TableOptions<T>;
 
   protected abstract refresh(newElements: T[]): void;
   protected abstract initData(): void;
@@ -30,5 +23,13 @@ export abstract class TableOptions<T> implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.refreshEvent.unsubscribe();
     this.destroyData();
+  }
+
+  public displayedColumns(): string[] {
+    const columns: string[] = [];
+    this.columns.forEach((value: TableColumn) => {
+      columns.push(value.id);
+    });
+    return columns;
   }
 }
