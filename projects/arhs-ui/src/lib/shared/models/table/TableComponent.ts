@@ -1,4 +1,4 @@
-import {EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
+import {EventEmitter, Input, OnDestroy, OnInit, Output, TemplateRef} from '@angular/core';
 import {TableOptions} from './TableOptions';
 import {TableColumn} from './TableColumn';
 
@@ -22,6 +22,10 @@ export abstract class TableComponent<T> implements OnInit, OnDestroy {
    * Options of the table.
    */
   @Input() options: TableOptions<T>;
+  /**
+   * (Optional) Detail template to display when user click on element.
+   */
+  @Input() details: TemplateRef<any>;
   /**
    * Event emitted when element is selected by the user.
    */

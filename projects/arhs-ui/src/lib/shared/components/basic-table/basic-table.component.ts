@@ -4,16 +4,27 @@ import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 import {SelectionModel} from '@angular/cdk/collections';
 import {ITableFactory} from '../../services/ITableFactory';
 import {TableFactoryService} from '../../services/implementations/table-factory.service';
+import {animate, state, style, transition, trigger} from '@angular/animations';
 
 /**
  * Generic table component for web platform.
+ * Example of usage:
+ * <example-url>http://localhost/demo/mysample.component.html</example-url>
+ * <example-url>/demo/mysample.component.html</example-url>
  */
 @Component({
   selector: 'arhs-ui-basic-table',
   templateUrl: './basic-table.component.html',
   styles: [
     '.mat-column-select {overflow: initial;}'
-  ]
+  ],
+  animations: [
+    trigger('detailExpand', [
+      state('collapsed', style({height: '0px', minHeight: '0'})),
+      state('expanded', style({height: '*'})),
+      transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
+    ]),
+  ],
 })
 export class BasicTableComponent<T> extends BasicTableCommon<T> {
 
@@ -29,6 +40,10 @@ export class BasicTableComponent<T> extends BasicTableCommon<T> {
    * Correspond to the elements container for the table.
    */
   dataSource: MatTableDataSource<T>;
+  /**
+   * Current expanded element.
+   */
+  expandedElement: T | null;
   /**
    * Correspond to the paginator object.
    */
@@ -46,12 +61,18 @@ export class BasicTableComponent<T> extends BasicTableCommon<T> {
     this.tableFactory = tableFactory;
   }
 
+  /**
+   * Refers to {@link TableComponent}
+   */
   protected destroyData(): void {
     if (this.options.selection) {
       this.selection.changed.unsubscribe();
     }
   }
 
+  /**
+   * Refers to {@link TableComponent}
+   */
   protected initData(): void {
     if (this.options.selection) {
       this.selection.changed.subscribe((value) => {
@@ -61,6 +82,9 @@ export class BasicTableComponent<T> extends BasicTableCommon<T> {
     this.initTable();
   }
 
+  /**
+   * Refers to {@link TableComponent}
+   */
   protected refresh(newElements: T[]): void {
     if (newElements) {
       console.log('Refresh generic table.');
@@ -68,6 +92,9 @@ export class BasicTableComponent<T> extends BasicTableCommon<T> {
     }
   }
 
+  /**
+   * Refers to {@link TableComponent}
+   */
   public applyFiltering(value: string): void {
     this.dataSource.filter = value.trim().toLowerCase();
   }
@@ -91,6 +118,14 @@ export class BasicTableComponent<T> extends BasicTableCommon<T> {
     return numSelected === numRows;
   }
 
+  /**
+   * Called when user click on an element.
+   * @param element Selected element.
+   */
+  public onElementSelected(element: T): void {
+    this.selection.toggle(element);
+    this.expandedElement = this.expandedElement === element ? null : element;
+  }
   /**
    * Init the elements of the table.
    *
