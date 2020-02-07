@@ -1,24 +1,54 @@
 import {ITableOptions} from './ITableOptions';
-import {TableSelection} from './types/TableSelection';
 
+/**
+ * Implementation of {@link ITableOptions}.
+ * Refers to {@link ITableOptions}
+ */
 export class TableOptions<T> implements ITableOptions<T> {
+  /**
+   * Refers to {@link ITableOptions}
+   */
   footer = false;
+  /**
+   * Refers to {@link ITableOptions}
+   */
   stickyHeader = false;
+  /**
+   * Refers to {@link ITableOptions}
+   */
   stickyFooter = false;
+  /**
+   * Refers to {@link ITableOptions}
+   */
   pagination = false;
+  /**
+   * Refers to {@link ITableOptions}
+   */
   paginationSorting: number[] = [1, 5, 25, 50];
+  /**
+   * Refers to {@link ITableOptions}
+   */
   sorting = false;
+  /**
+   * Refers to {@link ITableOptions}
+   */
   filtering = false;
-  selection: TableSelection<T> = null;
+  /**
+   * Refers to {@link ITableOptions}
+   */
+  selection = false;
 
-  constructor(footer?: boolean,
-              stickyHeader?: boolean,
-              stickyFooter?: boolean,
-              pagination?: boolean,
-              paginationSorting?: number[],
-              sorting?: boolean,
-              filtering?: boolean,
-              selection?: TableSelection<T>) {
+  /**
+   * Refers to {@link ITableOptions}
+   */
+  constructor(footer = false,
+              stickyHeader = false,
+              stickyFooter = false,
+              pagination = false,
+              paginationSorting = [1, 5, 25, 50],
+              sorting = false,
+              filtering = false,
+              selection = false) {
     this.footer = footer;
     this.stickyHeader = stickyHeader;
     this.stickyFooter = stickyFooter;

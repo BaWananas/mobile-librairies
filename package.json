@@ -15,7 +15,8 @@
     "publish:arhs-ui": "npm run build:arhs-ui && cd dist/arhs-ui && npm publish",
     "publish-patch:arhs-ui": "npm run patch:arhs-ui && npm run publish:arhs-ui",
     "publish-minor:arhs-ui": "npm run minor:arhs-ui && npm run publish:arhs-ui",
-    "publish-major:arhs-ui": "npm run major:arhs-ui && npm run publish:arhs-ui"
+    "publish-major:arhs-ui": "npm run major:arhs-ui && npm run publish:arhs-ui",
+    "doc:arhs-ui": "npx compodoc -p projects/arhs-ui/tsconfig.lib.json"
   },
   "private": true,
   "dependencies": {

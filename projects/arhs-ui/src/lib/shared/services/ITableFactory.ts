@@ -1,15 +1,14 @@
 import {ITableColumn} from '../models/table/ITableColumn';
 import {ITableOptions} from '../models/table/ITableOptions';
-import {TableSelection} from '../models/table/types/TableSelection';
 import {FooterValue} from '../models/table/types/FooterValue';
 
 /**
- * @description Factory for table elements (used to build a table component).
+ * Factory for table elements (used to build a table component).
  */
 export interface ITableFactory {
 
   /**
-   * @description Get an object encapsulating table options.
+   * Get an object encapsulating table options.
    * @param footer There is at least one footer ?
    * @param stickyHeader Is the header is sticky ?
    * @param stickyFooter Is the footer is sticky ? (if there are footers)
@@ -27,10 +26,10 @@ export interface ITableFactory {
                 paginationSorting?: number[],
                 sorting?: boolean,
                 filtering?: boolean,
-                selection?: TableSelection<T>): ITableOptions<T>;
+                selection?: boolean): ITableOptions<T>;
 
   /**
-   * @description
+   * Get an object encapsulating table columns.
    * @param columnsTitle String array containing the displayed titles of the columns.
    * The length of the array must be the same of dataRef and footers array.
    * @param dataRef String array containing the exact name of the data object member displayed in the table.

@@ -1,4 +1,4 @@
-import {EventEmitter, Input} from '@angular/core';
+import {EventEmitter, Input, Output} from '@angular/core';
 import {Group} from '../../../models/Group';
 import {TableOptions} from '../../../../shared/models/table/TableOptions';
 import {ITableFactory} from '../../../../shared/services/ITableFactory';
@@ -14,11 +14,17 @@ export abstract class GroupsListCommon {
   @Input() data: Group[];
   @Input() options: TableOptions<Group>;
 
+  @Output() onSelect: EventEmitter<Group[]> = new EventEmitter<Group[]>();
+
   protected constructor(tableFactory: ITableFactory) {
     this.tableFactory = tableFactory;
   }
 
   public getColumns(): TableColumn[] {
     return this.tableFactory.getColumns(GroupsListCommon.columnsTitles, GroupsListCommon.columnsIds);
+  }
+
+  public onSelectElement(elements: Group[]): void {
+    this.onSelect.emit(elements);
   }
 }

@@ -1,1 +1,1 @@
-<arhs-ui-basic-table #table [refreshEvent]="refreshEvent" [data]="data" [options]="options" [columns]="getColumns()"></arhs-ui-basic-table>
+<arhs-ui-basic-table #table (onSelect)="onSelectElement($event)" [refreshEvent]="refreshEvent" [data]="data" [options]="options" [columns]="getColumns()"></arhs-ui-basic-table>
