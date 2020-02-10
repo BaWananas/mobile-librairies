@@ -1,4 +1,4 @@
-import {EventEmitter, Input, Output} from '@angular/core';
+import {EventEmitter, Input, Output, TemplateRef} from '@angular/core';
 import {Group} from '../../../models/Group';
 import {TableOptions} from '../../../../shared/models/table/TableOptions';
 import {ITableFactory} from '../../../../shared/services/ITableFactory';
@@ -13,6 +13,7 @@ export abstract class GroupsListCommon {
   @Input() refreshEvent: EventEmitter<Group[]>;
   @Input() data: Group[];
   @Input() options: TableOptions<Group>;
+  @Input() detailsTemplate: TemplateRef<any>;
 
   @Output() onSelect: EventEmitter<Group[]> = new EventEmitter<Group[]>();
 

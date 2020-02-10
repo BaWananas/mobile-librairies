@@ -16,7 +16,10 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
   selector: 'arhs-ui-basic-table',
   templateUrl: './basic-table.component.html',
   styles: [
-    '.mat-column-select {overflow: initial;}'
+    '.mat-column-select {overflow: initial;}',
+    'tr.detail-row {height: 0; border-bottom-width: 0px; border-top-width: 0px}',
+    '.element-row td {border-bottom-width: 0;}',
+    '.element-detail {overflow: hidden; display: flex;}'
   ],
   animations: [
     trigger('detailExpand', [
@@ -123,8 +126,11 @@ export class BasicTableComponent<T> extends BasicTableCommon<T> {
    * @param element Selected element.
    */
   public onElementSelected(element: T): void {
-    this.selection.toggle(element);
-    this.expandedElement = this.expandedElement === element ? null : element;
+    if (this.details) {
+      this.expandedElement = this.expandedElement === element ? null : element;
+    } else {
+      this.selection.toggle(element);
+    }
   }
   /**
    * Init the elements of the table.
