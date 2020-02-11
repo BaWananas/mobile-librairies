@@ -24,6 +24,12 @@
       ],
       "arhs-ui/*": [
         "dist/arhs-ui/*"
+      ],
+      "arhs-core": [
+        "dist/arhs-core"
+      ],
+      "arhs-core/*": [
+        "dist/arhs-core/*"
       ]
     }
   },

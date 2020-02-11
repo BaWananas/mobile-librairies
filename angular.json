@@ -37,6 +37,41 @@
           }
         }
       }
+    },
+    "arhs-core": {
+      "projectType": "library",
+      "root": "projects/arhs-core",
+      "sourceRoot": "projects/arhs-core/src",
+      "prefix": "arhs-core",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/arhs-core/tsconfig.lib.json",
+            "project": "projects/arhs-core/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/arhs-core/src/test.ts",
+            "tsConfig": "projects/arhs-core/tsconfig.spec.json",
+            "karmaConfig": "projects/arhs-core/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/arhs-core/tsconfig.lib.json",
+              "projects/arhs-core/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "arhs-ui"
