@@ -2,10 +2,9 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable, of} from 'rxjs';
 import {IHttpService} from '../IHttpService';
-import {ApiServices} from '../../models/apiServices';
-import {catchError} from 'rxjs/operators';
-import {LoggerService} from './logger.service';
 import {ILoggerService} from '../ILoggerService';
+import {LoggerService} from './logger.service';
+import {ApiServices} from '../../models/ApiServices';
 
 @Injectable({
   providedIn: 'root'
@@ -18,10 +17,9 @@ export class HttpService implements IHttpService {
     this.loggerService = loggerService;
   }
 
-  token: string = null;
-  apiDiscoveryUrl: string = null;
-
-  headers: HttpHeaders = new HttpHeaders({
+  public token: string = null;
+  public rootUrl: string = null;
+  public headers: HttpHeaders = new HttpHeaders({
     Authorization: 'Bearer ' + this.token,
     'Access-Control-Allow-Origin': '*',
     'Content-Type': 'application/json',
@@ -88,9 +86,13 @@ export class HttpService implements IHttpService {
   }
 
   discoverApiUrl(api: ApiServices): Observable<any> {
-    if (this.apiDiscoveryUrl == null) { return of(null); }
+    if (this.rootUrl == null) {
+      const e: Error = new Error('Discovery url nor initialized.');
+      this.loggerService.error(this, e.message);
+      throw e;
+    }
 
-    /* In a real case, when discovery API will be launched.
+    /* In a real case.
     return this.get<any>(this.apiDiscoveryUrl, ApiServices.DISCOVERY_API).pipe(
       catchError((err, caught) => {
         this.loggerService.error(this, 'Error occurred during retrieving url from API discovery.');
@@ -99,7 +101,7 @@ export class HttpService implements IHttpService {
     );
      */
     return of({
-      url: 'http://localhost:8080/'
+      url: this.rootUrl
     });
   }
 }

@@ -6,7 +6,7 @@ import {IHttpService} from '../IHttpService';
 @Injectable({
   providedIn: 'root'
 })
-export class HttpService implements IHttpService {
+export class HttpServiceOld implements IHttpService {
 
   constructor(private httpClient: HttpClient) {}
 

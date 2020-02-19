@@ -1,0 +1,5 @@
+export enum ApiServices {
+  DISCOVERY,
+  SUBSCRIPTIONS,
+  AUTHENTICATION_API
+}

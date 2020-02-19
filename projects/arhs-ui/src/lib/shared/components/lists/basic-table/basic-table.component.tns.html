@@ -1,0 +1,27 @@
+<ScrollView height="100%" orientation="vertical" *ngIf="data">
+      <GridLayout margin="20" padding="10" borderColor="#d3d3d3" borderWidth="2" borderRadius="3" [columns]="columnsToStringValue()" [rows]="rowsToStringValue()">
+
+        <Label *ngFor="let column of columns; let index = index" class="h4" text="{{column.title}}" row="0" col="{{index}}"></Label>
+        <Label *ngIf="details" class="h4" text="" row="0" col="{{columns.length}}"></Label>
+
+        <StackLayout marginTop="4" marginBottom="4" class="hr" row="1" colSpan="4"></StackLayout>
+
+        <ng-container *ngFor="let element of data; let index = index; let last = last">
+            <Label *ngFor="let column of columns; let colIndex = index" row="{{(index*2)+2}}" col="{{colIndex}}" class="body" text="{{element[column.dataRef]}}"></Label>
+
+          <FlexboxLayout *ngIf="details" row="{{(index*2)+2}}" col="{{columns.length}}" verticalAlignment="middle" alignItems="center" justifyContent="center">
+            <Label class="fas" text="&#xf142;"></Label>
+          </FlexboxLayout>
+
+          <StackLayout marginTop="4" marginBottom="4" *ngIf="!last" class="hr" row="{{(index*2)+3}}" colSpan="4"></StackLayout>
+        </ng-container>
+
+        <ng-container *ngIf="options.footer">
+          <StackLayout marginTop="4" marginBottom="4" class="hr" row="{{getInitialRowsFooterIndex()}}" colSpan="4"></StackLayout>
+          <ng-container *ngFor="let column of columns; let index = index">
+            <Label *ngIf="column.footer" class="body" text="{{column.footer()}}" row="{{getInitialRowsFooterIndex()+1}}" col="{{index}}"></Label>
+          </ng-container>
+        </ng-container>
+
+      </GridLayout>
+</ScrollView>

@@ -80,9 +80,6 @@ export abstract class TableComponent<T> implements OnInit, OnDestroy {
     this.columns.forEach((value: TableColumn) => {
       columns.push(value.id);
     });
-    if (this.options.selection) {
-      columns.unshift('_select');
-    }
     return columns;
   }
 

@@ -14,4 +14,4 @@ export * from './models/HttpResponse/HypermediaLinks';
 export * from './services/IHttpErrorService';
 export * from './services/IHttpService';
 export * from './services/implementations/http-error.service';
-export * from './services/implementations/http.service';
+export * from './services/implementations/http-service.service';

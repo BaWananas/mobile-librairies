@@ -2,9 +2,9 @@ import {Component, ViewChild} from '@angular/core';
 import {BasicTableCommon} from './basic-table.common';
 import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 import {SelectionModel} from '@angular/cdk/collections';
-import {ITableFactory} from '../../services/ITableFactory';
-import {TableFactoryService} from '../../services/implementations/table-factory.service';
 import {animate, state, style, transition, trigger} from '@angular/animations';
+import {ITableFactory} from '../../../services/ITableFactory';
+import {TableFactoryService} from '../../../services/implementations/table-factory.service';
 
 /**
  * Generic table component for web platform.
@@ -132,6 +132,18 @@ export class BasicTableComponent<T> extends BasicTableCommon<T> {
       this.selection.toggle(element);
     }
   }
+
+  /**
+   * Refers to {@link TableComponent}
+   */
+  displayedColumns(): string[] {
+    const columns: string[] = super.displayedColumns();
+    if (this.options.selection) {
+      columns.unshift('_select');
+    }
+    return columns;
+  }
+
   /**
    * Init the elements of the table.
    *
