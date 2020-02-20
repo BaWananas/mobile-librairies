@@ -12,3 +12,4 @@ export * from './arhs-ui.module.tns';
  * Export elements from other public-apis.
  */
 export * from './lib/shared/public-api';
+export * from './lib/animation/public-api';
