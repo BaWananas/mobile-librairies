@@ -3,7 +3,7 @@
  */
 export * from './services/IMobileAnimationService';
 export * from './services/IAnimationService';
-export * from './services/implementations/mobile-animation.service';
+export * from './services/implementations/mobile-animation.service.tns';
 
 /**
  * Export models

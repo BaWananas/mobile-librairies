@@ -40,12 +40,9 @@
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
     "@arhs/core": "0.0.2",
-    "@arhs/ui": "file:dist/arhs-ui/arhs-ui-0.0.2.tgz",
-    "@nativescript/angular": "^8.21.0",
     "hammerjs": "^2.0.8",
     "nativescript-imagepicker": "^7.1.0",
     "rxjs": "~6.4.0",
-    "tns-core-modules": "^6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },
@@ -71,6 +68,8 @@
     "ts-node": "~7.0.0",
     "tsickle": "^0.37.0",
     "tslint": "~5.15.0",
-    "typescript": "~3.5.3"
+    "typescript": "~3.5.3",
+    "tns-core-modules": "^6.4.1",
+    "nativescript-angular": "^8.21.0"
   }
 }

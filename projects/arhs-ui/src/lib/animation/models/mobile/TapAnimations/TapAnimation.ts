@@ -1,6 +1,5 @@
-import {AnimationDefinition} from '@nativescript/core/ui/animation';
+import {AnimationDefinition} from '@nativescript/core';
 import {View} from '@nativescript/core';
-import {AnimationCurve} from '@nativescript/core/ui/enums';
 import {MobileAnimation} from '../MobileAnimation';
 
 export class TapAnimation extends MobileAnimation {
@@ -30,7 +29,7 @@ export class TapAnimation extends MobileAnimation {
             scale: {x: 0.6, y: 0.6},
             opacity: 0.6,
             duration: this.duration / 2,
-            curve: AnimationCurve.easeOut,
+            curve: 'easeOut',
             iterations: 1
         };
     }
@@ -41,7 +40,7 @@ export class TapAnimation extends MobileAnimation {
             scale: {x: 1, y: 1},
             opacity: 1,
             duration: this.duration / 2,
-            curve: AnimationCurve.easeIn,
+            curve: 'easeIn',
             iterations: 1
         };
     }

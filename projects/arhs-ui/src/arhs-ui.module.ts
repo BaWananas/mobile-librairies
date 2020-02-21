@@ -1,8 +1,8 @@
 import {NgModule} from '@angular/core';
 import {SharedModule} from './lib/shared/shared.module';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-const MODULES = [SharedModule,
+const MODULES = [
+  SharedModule
 ];
 
 const DECLARATION = [
@@ -14,7 +14,6 @@ const DECLARATION = [
   ],
   imports: [
     MODULES,
-    BrowserAnimationsModule,
   ],
   exports: [
     MODULES,
