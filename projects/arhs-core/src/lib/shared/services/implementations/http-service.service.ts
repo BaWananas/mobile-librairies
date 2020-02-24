@@ -63,7 +63,7 @@ export class HttpService implements IHttpService {
     return new Observable<T>(subscriber => {
       this.discoverApiUrl(api).subscribe(value => {
         if (value != null) {
-          this.httpClient.post<T>(value.url + resource, {headers: customHeaders ? customHeaders : this.headers}).subscribe(value1 => {
+          this.httpClient.post<T>(value.url + resource, body, {headers: customHeaders ? customHeaders : this.headers}).subscribe(value1 => {
             subscriber.next(value1);
             subscriber.complete();
           }, error => {
@@ -80,7 +80,7 @@ export class HttpService implements IHttpService {
     return new Observable<T>(subscriber => {
       this.discoverApiUrl(api).subscribe(value => {
         if (value != null) {
-          this.httpClient.put<T>(value.url + resource, {headers: customHeaders ? customHeaders : this.headers}).subscribe(value1 => {
+          this.httpClient.put<T>(value.url + resource, body, {headers: customHeaders ? customHeaders : this.headers}).subscribe(value1 => {
             subscriber.next(value1);
             subscriber.complete();
           }, error => {
