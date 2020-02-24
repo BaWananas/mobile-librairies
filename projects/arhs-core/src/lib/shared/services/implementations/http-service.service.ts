@@ -26,82 +26,100 @@ export class HttpService implements IHttpService {
   });
 
   delete<T>(resource: string, api: ApiServices, customHeaders?: HttpHeaders): Observable<T> {
-    let obs: Observable<T>;
-    this.discoverApiUrl(api).subscribe(value => {
-      if (value != null) {
-        obs = this.httpClient.delete<T>(value.url + resource, {headers: customHeaders ? customHeaders : this.headers});
-      }
+    return new Observable<T>(subscriber => {
+      this.discoverApiUrl(api).subscribe(value => {
+        if (value != null) {
+          this.httpClient.delete<T>(value.url + resource, {headers: customHeaders ? customHeaders : this.headers}).subscribe(value1 => {
+            subscriber.next(value1);
+            subscriber.complete();
+          }, error => {
+            subscriber.error(error);
+          });
+        }
+      }, error => {
+        subscriber.error(error);
+      });
     });
-
-    return obs;
   }
 
   get<T>(resource: string, api: ApiServices, customHeaders?: HttpHeaders): Observable<T> {
-    let obs: Observable<T>;
-    this.discoverApiUrl(api).subscribe(value => {
-      if (value != null) {
-        obs = this.httpClient.get<T>(value.url + resource, {headers: customHeaders ? customHeaders : this.headers});
-      }
+    return new Observable<T>(subscriber => {
+      this.discoverApiUrl(api).subscribe(value => {
+        if (value != null) {
+          this.httpClient.get<T>(value.url + resource, {headers: customHeaders ? customHeaders : this.headers}).subscribe(value1 => {
+            subscriber.next(value1);
+            subscriber.complete();
+          }, error => {
+            subscriber.error(error);
+          });
+        }
+      }, error => {
+        subscriber.error(error);
+      });
     });
-
-    return obs;
   }
 
   post<T>(resource: string, body: any, api: ApiServices, customHeaders?: HttpHeaders): Observable<T> {
-    let obs: Observable<T>;
-    this.discoverApiUrl(api).subscribe(value => {
-      if (value != null) {
-        obs = this.httpClient.post<T>(value.url + resource, {headers: customHeaders ? customHeaders : this.headers});
-      }
+    return new Observable<T>(subscriber => {
+      this.discoverApiUrl(api).subscribe(value => {
+        if (value != null) {
+          this.httpClient.post<T>(value.url + resource, {headers: customHeaders ? customHeaders : this.headers}).subscribe(value1 => {
+            subscriber.next(value1);
+            subscriber.complete();
+          }, error => {
+            subscriber.error(error);
+          });
+        }
+      }, error => {
+        subscriber.error(error);
+      });
     });
-
-    return obs;
   }
 
   put<T>(resource: string, body: any, api: ApiServices, customHeaders?: HttpHeaders): Observable<T> {
-    let obs: Observable<T>;
-    this.discoverApiUrl(api).subscribe(value => {
-      if (value != null) {
-        obs = this.httpClient.put<T>(value.url + resource, {headers: customHeaders ? customHeaders : this.headers});
-      }
+    return new Observable<T>(subscriber => {
+      this.discoverApiUrl(api).subscribe(value => {
+        if (value != null) {
+          this.httpClient.put<T>(value.url + resource, {headers: customHeaders ? customHeaders : this.headers}).subscribe(value1 => {
+            subscriber.next(value1);
+            subscriber.complete();
+          }, error => {
+            subscriber.error(error);
+          });
+        }
+      }, error => {
+        subscriber.error(error);
+      });
     });
-
-    return obs;
   }
 
   auth<T>(): Observable<T> {
-    let obs: Observable<T>;
-    this.discoverApiUrl(ApiServices.AUTHENTICATION_API).subscribe((value: any) => {
-      obs = this.get<T>(value.url, ApiServices.AUTHENTICATION_API);
-
-      // TODO
-      obs.subscribe(authResponse => {
-        console.log(JSON.stringify(authResponse));
+    return new Observable<T>(subscriber => {
+      this.discoverApiUrl(ApiServices.AUTHENTICATION_API).subscribe((value: any) => {
+        // TODO
+        subscriber.next();
+        subscriber.complete();
       }, error => {
-        this.token = null;
+        subscriber.error(error);
       });
     });
-
-    return obs;
   }
 
   discoverApiUrl(api: ApiServices): Observable<any> {
-    if (this.rootUrl == null) {
-      const e: Error = new Error('Discovery url nor initialized.');
-      this.loggerService.error(this, e.message);
-      throw e;
-    }
+    return new Observable<any>(subscriber => {
+      if (this.rootUrl == null) {
+        const e: Error = new Error('Discovery url nor initialized.');
+        this.loggerService.error(this, e.message);
+        subscriber.error(e);
+        throw e;
+      }
 
-    /* In a real case.
-    return this.get<any>(this.apiDiscoveryUrl, ApiServices.DISCOVERY_API).pipe(
-      catchError((err, caught) => {
-        this.loggerService.error(this, 'Error occurred during retrieving url from API discovery.');
-        return of(null);
-      })
-    );
-     */
-    return of({
-      url: this.rootUrl
+      // TODO
+      /*
+       * In a real case, this method call Discovery API to obtain url from specified api: ApiServices.
+       */
+      subscriber.next({url: this.rootUrl});
+      subscriber.complete();
     });
   }
 }
