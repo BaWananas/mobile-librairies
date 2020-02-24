@@ -61,12 +61,16 @@ export class SubscriptionService implements ISubscriptionService {
 
       this.getSubscriptionsByUserId(userId).subscribe((value) => {
         let isSubscribed = false;
-        value._embedded.items.forEach((value1) => {
-          if (value1.groupId === groupId) {
-            isSubscribed = true;
-          }
-          return;
-        });
+
+        if (value._embedded) {
+          value._embedded.items.forEach((value1) => {
+            if (value1.groupId === groupId) {
+              isSubscribed = true;
+              return;
+            }
+          });
+        }
+
         subscriber.next(isSubscribed);
         subscriber.complete();
       }, error => {
@@ -82,11 +86,14 @@ export class SubscriptionService implements ISubscriptionService {
       this.getSubscriptionsByUserId(userId).subscribe(value => {
         let subscription: Subscription;
 
-        value._embedded.items.forEach(value1 => {
-          if (value1.groupId === groupId) {
-            subscription = value1;
-          }
-        });
+        if (value._embedded) {
+          value._embedded.items.forEach(value1 => {
+            if (value1.groupId === groupId) {
+              subscription = value1;
+              return;
+            }
+          });
+        }
 
         if (subscription) {
           this.unsubscribe(subscription.id).subscribe((value2) => {
