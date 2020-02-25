@@ -2,13 +2,20 @@ import {Injectable} from '@angular/core';
 import {View} from '@nativescript/core';
 import {MobileAnimation} from '../../models/mobile/MobileAnimation';
 import {IMobileAnimationService} from '../IMobileAnimationService';
+import {ILoggerService, LoggerService} from '@arhs/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MobileAnimationService implements IMobileAnimationService {
 
-  private static createAnimationImpl<T>(type: new(...args: any[]) => T ): T {
+  constructor(logger: LoggerService) {
+    this.logger = logger;
+  }
+
+  private readonly logger: ILoggerService;
+
+  private static createAnimationImpl<T>(type: new(...args: any[]) => T): T {
     return new type();
   }
 
@@ -26,16 +33,15 @@ export class MobileAnimationService implements IMobileAnimationService {
     return (!animation.view.isEnabled);
   }
 
-  constructor() {}
-
   animate<AnimationImpl extends MobileAnimation>(view: View,
                                                  animation: new(...args: any[]) => AnimationImpl,
-                                                 stackable = false): {promise: Promise<any>, animation: MobileAnimation} {
+                                                 stackable = false): { promise: Promise<any>, animation: MobileAnimation } {
     const concreteAnimation: MobileAnimation = MobileAnimationService.createAnimationImpl<AnimationImpl>(animation);
     concreteAnimation.view = view;
+    concreteAnimation.logger = this.logger;
 
     if (!stackable && MobileAnimationService.isAnimationRunning(concreteAnimation)) {
-      console.log('Animation still running');
+      this.logger.warn(this, 'Animation still running');
       return null;
     }
 
@@ -44,10 +50,10 @@ export class MobileAnimationService implements IMobileAnimationService {
     }
 
     const animationPromise: Promise<any> = concreteAnimation.animate().then(() => {
-      console.log('Remove animation.');
+      this.logger.debug(this, 'Remove animation.');
       MobileAnimationService.removeAnimation(concreteAnimation);
     }).catch(e => {
-      console.log('Error occurred during animation : ' + e);
+      this.logger.error(this, 'Error occurred during animation : ' + e);
       MobileAnimationService.removeAnimation(concreteAnimation);
     });
 

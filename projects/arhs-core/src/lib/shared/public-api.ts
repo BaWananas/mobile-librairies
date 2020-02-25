@@ -13,5 +13,7 @@ export * from './models/HttpResponse/HypermediaLinks';
  */
 export * from './services/IHttpErrorService';
 export * from './services/IHttpService';
+export * from './services/ILoggerService';
 export * from './services/implementations/http-error.service';
 export * from './services/implementations/http-service.service';
+export * from './services/implementations/logger.service';

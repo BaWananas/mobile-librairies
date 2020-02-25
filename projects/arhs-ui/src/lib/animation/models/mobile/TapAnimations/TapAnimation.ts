@@ -1,16 +1,17 @@
 import {AnimationDefinition} from '@nativescript/core';
 import {View} from '@nativescript/core';
 import {MobileAnimation} from '../MobileAnimation';
+import {ILoggerService} from '@arhs/core';
 
 export class TapAnimation extends MobileAnimation {
 
-    constructor(view: View, duration?: number, iteration?: number, delay?: number, originX?: number, originY?: number) {
+    constructor(view: View, logger: ILoggerService, duration?: number, iteration?: number, delay?: number, originX?: number, originY?: number) {
         if (!originX) { originX = 0.5; }
         if (!originY) { originY = 0.5; }
         if (!delay) { delay = 0; }
         if (!iteration) { iteration = 1; }
         if (!duration) { duration = 200; }
-        super(duration, iteration, delay, view, originX, originY);
+        super(duration, iteration, delay, view, originX, originY, false, logger);
     }
 
     animate(): Promise<void> {

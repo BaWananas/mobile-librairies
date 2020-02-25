@@ -1,6 +1,8 @@
 import {EventEmitter, Input, OnDestroy, OnInit, Output, TemplateRef} from '@angular/core';
 import {TableOptions} from './TableOptions';
 import {TableColumn} from './TableColumn';
+import {ILoggerService} from '@arhs/core';
+import {Subscription} from 'rxjs';
 
 /**
  * Interface to define the default properties and behaviors of every tables.
@@ -31,6 +33,14 @@ export abstract class TableComponent<T> implements OnInit, OnDestroy {
    */
   @Output() onSelect: EventEmitter<T[]> = new EventEmitter<T[]>();
 
+  private refreshEventSubscription: Subscription;
+
+  /**
+   * @param logger Refers to @arhs/core NPM package.
+   */
+  constructor(protected logger: ILoggerService) {
+  }
+
   /**
    * Refresh the table.
    *
@@ -56,8 +66,8 @@ export abstract class TableComponent<T> implements OnInit, OnDestroy {
    * Implementation of ngOnInit() in {@link OnInit}.
    */
   ngOnInit(): void {
-    console.log('Init generic table.');
-    this.refreshEvent.subscribe((newElements) => {
+    this.logger.debug(this, 'Init generic table.');
+    this.refreshEventSubscription = this.refreshEvent.subscribe((newElements) => {
       this.refresh(newElements);
     });
     this.initData();
@@ -67,8 +77,10 @@ export abstract class TableComponent<T> implements OnInit, OnDestroy {
    * Implementation of ngOnDestroy() in {@link OnDestroy}.
    */
   ngOnDestroy(): void {
-    console.log('Destroy generic table.');
-    this.refreshEvent.unsubscribe();
+    this.logger.debug(this, 'Destroy generic table.');
+    if (this.refreshEventSubscription) {
+      this.refreshEventSubscription.unsubscribe();
+    }
     this.destroyData();
   }
 

@@ -5,6 +5,7 @@ import {SelectionModel} from '@angular/cdk/collections';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {ITableFactory} from '../../../services/ITableFactory';
 import {TableFactoryService} from '../../../services/implementations/table-factory.service';
+import {ILoggerService, LoggerService} from '@arhs/core';
 
 /**
  * Generic table component for web platform.
@@ -58,10 +59,13 @@ export class BasicTableComponent<T> extends BasicTableCommon<T> {
 
   /**
    * @param tableFactory Refers to {@link ITableFactory}
+   * @param logger Refers to LoggerService in @arhs/core NPM package.
    */
-  constructor(tableFactory: TableFactoryService) {
-    super();
+  constructor(tableFactory: TableFactoryService,
+              logger: LoggerService) {
+    super(logger);
     this.tableFactory = tableFactory;
+    this.logger = logger;
   }
 
   /**
@@ -90,7 +94,7 @@ export class BasicTableComponent<T> extends BasicTableCommon<T> {
    */
   protected refresh(newElements: T[]): void {
     if (newElements) {
-      console.log('Refresh generic table.');
+      this.logger.debug(this, 'Refresh generic table.');
       this.initTable(newElements);
     }
   }

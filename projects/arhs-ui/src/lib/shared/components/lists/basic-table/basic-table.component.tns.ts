@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {BasicTableCommon} from './basic-table.common';
 import {NavigationBarVisibility} from '@nativescript/core/ui/enums';
 import auto = NavigationBarVisibility.auto;
+import {LoggerService} from '@arhs/core';
 
 /**
  * Generic table component for mobile platform.
@@ -12,15 +13,26 @@ import auto = NavigationBarVisibility.auto;
 })
 export class BasicTableComponent<T> extends BasicTableCommon<T> {
 
-  // TODO
+
+  constructor(logger: LoggerService) {
+    super(logger);
+  }
+
+  /**
+   * No need to do special operation for destroying the table
+   */
   protected destroyData(): void {
   }
 
-  // TODO
+  /**
+   * No need to do special operation for init the table
+   */
   protected initData(): void {
   }
 
-  // TODO
+  /**
+   * No need to do special operation for refreshing table : angular binding was in charge of that here.
+   */
   protected refresh(newElements: T[]): void {
   }
 
