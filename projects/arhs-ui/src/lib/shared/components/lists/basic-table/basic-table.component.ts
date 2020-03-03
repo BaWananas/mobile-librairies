@@ -5,13 +5,10 @@ import {SelectionModel} from '@angular/cdk/collections';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {ITableFactory} from '../../../services/ITableFactory';
 import {TableFactoryService} from '../../../services/implementations/table-factory.service';
-import {ILoggerService, LoggerService} from '@arhs/core';
+import {LoggerService} from '@arhs/core';
 
 /**
  * Generic table component for web platform.
- * Example of usage:
- * <example-url>http://localhost/demo/mysample.component.html</example-url>
- * <example-url>/demo/mysample.component.html</example-url>
  */
 @Component({
   selector: 'arhs-ui-basic-table',
@@ -58,6 +55,7 @@ export class BasicTableComponent<T> extends BasicTableCommon<T> {
   @ViewChild(MatSort, {static: false}) sort: MatSort;
 
   /**
+   * Constructor.
    * @param tableFactory Refers to {@link ITableFactory}
    * @param logger Refers to LoggerService in @arhs/core NPM package.
    */

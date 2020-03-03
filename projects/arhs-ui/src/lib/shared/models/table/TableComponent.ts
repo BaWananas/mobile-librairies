@@ -33,9 +33,13 @@ export abstract class TableComponent<T> implements OnInit, OnDestroy {
    */
   @Output() onSelect: EventEmitter<T[]> = new EventEmitter<T[]>();
 
+  /**
+   * RXJS subscription for refreshing event.
+   */
   private refreshEventSubscription: Subscription;
 
   /**
+   * Constructor.
    * @param logger Refers to @arhs/core NPM package.
    */
   constructor(protected logger: ILoggerService) {

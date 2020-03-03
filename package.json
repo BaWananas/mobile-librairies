@@ -16,7 +16,7 @@
     "publish-patch:arhs-ui": "npm run patch:arhs-ui && npm run publish:arhs-ui",
     "publish-minor:arhs-ui": "npm run minor:arhs-ui && npm run publish:arhs-ui",
     "publish-major:arhs-ui": "npm run major:arhs-ui && npm run publish:arhs-ui",
-    "doc:arhs-ui": "npx compodoc -p projects/arhs-ui/tsconfig.lib.json",
+    "doc:arhs-ui": "npx compodoc -p projects/arhs-ui/tsconfig.lib.json -d projects/arhs-ui/documentation/",
     "build:arhs-core": "ng build arhs-core",
     "patch:arhs-core": "cd projects/arhs-core && npm version patch",
     "minor:arhs-core": "cd projects/arhs-core && npm version minor",
@@ -25,7 +25,7 @@
     "publish-patch:arhs-core": "npm run patch:arhs-core && npm run publish:arhs-core",
     "publish-minor:arhs-core": "npm run minor:arhs-core && npm run publish:arhs-core",
     "publish-major:arhs-core": "npm run major:arhs-core && npm run publish:arhs-core",
-    "doc:arhs-core": "npx compodoc -p projects/arhs-core/tsconfig.lib.json"
+    "doc:arhs-core": "npx compodoc -p projects/arhs-core/tsconfig.lib.json -d projects/arhs-core/documentation/"
   },
   "private": true,
   "dependencies": {

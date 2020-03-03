@@ -6,7 +6,7 @@ import {ITableColumn} from './ITableColumn';
  */
 export class TableColumn implements ITableColumn {
   /**
-   *
+   * Constructor.
    * @param id ID of the column.
    * @param title Displayed title of the column.
    * @param dataRef Reference to the member of the data object displayed in the table.

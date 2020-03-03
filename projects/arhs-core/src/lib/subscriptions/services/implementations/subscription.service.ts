@@ -11,15 +11,33 @@ import {LoggerService} from '../../../shared/services/implementations/logger.ser
 import {IHttpErrorService} from '../../../shared/services/IHttpErrorService';
 import {HttpErrorService} from '../../../shared/services/implementations/http-error.service';
 
+/**
+ * Implementation of {@link ISubscriptionService}.
+ */
 @Injectable({
   providedIn: 'root'
 })
 export class SubscriptionService implements ISubscriptionService {
 
+  /**
+   * Url of the available resource. (excluding the url of the API)
+   */
   public static resourcePath = 'subscriptions';
+  /**
+   * @ignore
+   */
   private logger: ILoggerService;
+  /**
+   * @ignore
+   */
   private errorService: IHttpErrorService;
 
+  /**
+   * Refers to {@link ISubscriptionService}
+   * @param http HttpService used to HTTP CRUD operation (refers to {@link IHttpService}
+   * @param loggerService Service used to logging (refers to {@link ILoggerService})
+   * @param errorService Service used to error conversion (refers to {@link IHttpErrorService})
+   */
   constructor(private http: HttpService,
               loggerService: LoggerService,
               errorService: HttpErrorService) {
@@ -27,24 +45,44 @@ export class SubscriptionService implements ISubscriptionService {
     this.errorService = errorService;
   }
 
+  /**
+   * Refers to {@link ISubscriptionService}
+   */
   getAllSubscriptions(): Observable<CollectionModel<Subscription>> {
     return this.http.get<CollectionModel<Subscription>>(SubscriptionService.resourcePath, ApiServices.SUBSCRIPTIONS);
   }
 
+  /**
+   * Refers to {@link ISubscriptionService}
+   * @param id
+   */
   getSubscriptionById(id: number): Observable<Subscription> {
     return this.http.get<Subscription>(SubscriptionService.resourcePath + '/' + id, ApiServices.SUBSCRIPTIONS);
   }
 
+  /**
+   * Refers to {@link ISubscriptionService}
+   * @param id
+   */
   getSubscriptionsByGroupId(id: number): Observable<CollectionModel<Subscription>> {
     return this.http.get<CollectionModel<Subscription>>(GroupService.resourcePath + '/' + id + '/subscriptions', ApiServices.SUBSCRIPTIONS);
   }
 
+  /**
+   * Refers to {@link ISubscriptionService}
+   * @param id
+   */
   getSubscriptionsByUserId(id: number): Observable<CollectionModel<Subscription>> {
     return this.http.get<CollectionModel<Subscription>>(
       SubscriptionService.resourcePath + '/search/byuserid/' + id,
       ApiServices.SUBSCRIPTIONS);
   }
 
+  /**
+   * Refers to {@link ISubscriptionService}
+   * @param groupId
+   * @param userId
+   */
   subscribe(groupId: number, userId: number): Observable<Subscription> {
     return this.http.post<Subscription>(
       SubscriptionService.resourcePath,
@@ -52,10 +90,19 @@ export class SubscriptionService implements ISubscriptionService {
       ApiServices.SUBSCRIPTIONS);
   }
 
+  /**
+   * Refers to {@link ISubscriptionService}
+   * @param subscriptionId
+   */
   unsubscribe(subscriptionId: number): Observable<boolean> {
     return this.http.delete<boolean>(SubscriptionService.resourcePath + '/' + subscriptionId, ApiServices.SUBSCRIPTIONS);
   }
 
+  /**
+   * Refers to {@link ISubscriptionService}
+   * @param groupId
+   * @param userId
+   */
   isSubscribedToGroup(groupId: number, userId: number): Observable<boolean> {
     return new Observable<boolean>(subscriber => {
 
@@ -80,6 +127,11 @@ export class SubscriptionService implements ISubscriptionService {
 
   }
 
+  /**
+   * Refers to {@link ISubscriptionService}
+   * @param groupId
+   * @param userId
+   */
   unsubscribeToGroup(groupId: number, userId: number): Observable<boolean> {
     return new Observable<boolean>(subscriber => {
 

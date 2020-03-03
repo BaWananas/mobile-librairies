@@ -1,6 +1,11 @@
 {
   "name": "@arhs/core",
-  "version": "0.0.20",
+  "version": "1.0.0",
+  "author": {
+    "name": "arhs",
+    "url": "https://www.arhs-group.com/"
+  },
+  "description": "Core module for any @arhs modules.",
   "peerDependencies": {
     "@angular/common": "^8.2.14",
     "@angular/core": "^8.2.14"

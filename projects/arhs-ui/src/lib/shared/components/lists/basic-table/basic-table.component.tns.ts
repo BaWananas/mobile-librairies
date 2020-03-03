@@ -13,7 +13,10 @@ import {LoggerService} from '@arhs/core';
 })
 export class BasicTableComponent<T> extends BasicTableCommon<T> {
 
-
+  /**
+   * Constructor.
+   * @param logger Service used for logging.
+   */
   constructor(logger: LoggerService) {
     super(logger);
   }
@@ -36,7 +39,11 @@ export class BasicTableComponent<T> extends BasicTableCommon<T> {
   protected refresh(newElements: T[]): void {
   }
 
-  // TODO
+  /**
+   * TODO
+   * Refers to {@link TableComponent}
+   * @param value Filter.
+   */
   applyFiltering(value: string): void {
   }
 

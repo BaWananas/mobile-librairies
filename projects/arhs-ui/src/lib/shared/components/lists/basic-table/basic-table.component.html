@@ -55,7 +55,7 @@
       <ng-container matColumnDef="_expendedDetails">
         <td mat-cell *matCellDef="let element" [attr.colspan]="details? columns.length + 1 : columns.length" class="w-100">
           <div class="element-detail" [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
-            <ng-container *ngTemplateOutlet="details; context: element"></ng-container>
+            <ng-container *ngTemplateOutlet="details; context: {$implicit: element, element: element}"></ng-container>
           </div>
         </td>
       </ng-container>

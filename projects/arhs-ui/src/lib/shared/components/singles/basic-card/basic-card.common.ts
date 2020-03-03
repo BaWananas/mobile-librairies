@@ -1,5 +1,9 @@
 import {EventEmitter, Input, Output, TemplateRef} from '@angular/core';
 
+/**
+ * TODO - For future version
+ * @ignore
+ */
 export abstract class BasicCardCommon {
   @Input() title: string;
   @Input() subtitle: string;

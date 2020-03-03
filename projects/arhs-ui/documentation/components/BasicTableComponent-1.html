@@ -1,0 +1,2304 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>arhs-workspace documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">arhs-workspace documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>BasicTableComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#readme" role="tab" id="readme-tab" data-toggle="tab" data-link="readme">README</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>projects/arhs-ui/src/lib/shared/components/lists/basic-table/basic-table.component.ts</code>
+</p>
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Generic table component for web platform.</p>
+
+    </p>
+
+    <p class="comment">
+        <h3>Extends</h3>
+    </p>
+    <p class="comment">
+                <code><a href="../classes/BasicTableCommon.html" target="_self" >BasicTableCommon</a></code>
+    </p>
+
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>arhs-ui-basic-table</code></td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">styles</td>
+                <td class="col-md-9"><code>.mat-column-select {overflow: initial;},tr.detail-row {height: 0; border-bottom-width: 0px; border-top-width: 0px},.element-row td {border-bottom-width: 0;},.element-detail {overflow: hidden; display: flex;}</code></td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./basic-table.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#dataSource">dataSource</a>
+                            </li>
+                            <li>
+                                <a href="#expandedElement">expandedElement</a>
+                            </li>
+                            <li>
+                                <a href="#paginator">paginator</a>
+                            </li>
+                            <li>
+                                <a href="#selection">selection</a>
+                            </li>
+                            <li>
+                                <a href="#sort">sort</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#tableFactory">tableFactory</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#refreshEventSubscription">refreshEventSubscription</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#applyFiltering">applyFiltering</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#destroyData">destroyData</a>
+                            </li>
+                            <li>
+                                <a href="#displayedColumns">displayedColumns</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#initData">initData</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#initTable">initTable</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#isAllSelected">isAllSelected</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#masterToggle">masterToggle</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#onElementSelected">onElementSelected</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#refresh">refresh</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Abstract</span>
+                                <a href="#applyFiltering">applyFiltering</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                    <span class="modifier">Abstract</span>
+                                <a href="#destroyData">destroyData</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#displayedColumns">displayedColumns</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                    <span class="modifier">Abstract</span>
+                                <a href="#initData">initData</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy">ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#onSelectElement">onSelectElement</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                    <span class="modifier">Abstract</span>
+                                <a href="#refresh">refresh</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#columns">columns</a>
+                            </li>
+                            <li>
+                                <a href="#data">data</a>
+                            </li>
+                            <li>
+                                <a href="#details">details</a>
+                            </li>
+                            <li>
+                                <a href="#options">options</a>
+                            </li>
+                            <li>
+                                <a href="#refreshEvent">refreshEvent</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#onSelect">onSelect</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(tableFactory: <a href="../injectables/TableFactoryService.html">TableFactoryService</a>, logger: LoggerService)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">projects/arhs-ui/src/lib/shared/components/lists/basic-table/basic-table.component.ts:55</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Constructor.</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>tableFactory</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/TableFactoryService.html" target="_self" >TableFactoryService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>Refers to {</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>logger</td>
+                                                  
+                                                        <td>
+                                                                    <code>LoggerService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>Refers to LoggerService in </p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="columns"></a>
+                        <b>columns</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/TableColumn.html" target="_self" >TableColumn[]</a></code>
+
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4" colspan="2">
+                                    <div class="io-line">Inherited from         <code><a href="../classes/TableComponent.html" target="_self" >TableComponent</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in         <code><a href="../classes/TableComponent.html#source" target="_self" >TableComponent:22</a></code>
+</div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Columns of the table.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="data"></a>
+                        <b>data</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>T[]</code>
+
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4" colspan="2">
+                                    <div class="io-line">Inherited from         <code><a href="../classes/TableComponent.html" target="_self" >TableComponent</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in         <code><a href="../classes/TableComponent.html#source" target="_self" >TableComponent:14</a></code>
+</div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Data of the table</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="details"></a>
+                        <b>details</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>TemplateRef&lt;any&gt;</code>
+
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4" colspan="2">
+                                    <div class="io-line">Inherited from         <code><a href="../classes/TableComponent.html" target="_self" >TableComponent</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in         <code><a href="../classes/TableComponent.html#source" target="_self" >TableComponent:30</a></code>
+</div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>(Optional) Detail template to display when user click on element.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="options"></a>
+                        <b>options</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/TableOptions.html" target="_self" >TableOptions&lt;T&gt;</a></code>
+
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4" colspan="2">
+                                    <div class="io-line">Inherited from         <code><a href="../classes/TableComponent.html" target="_self" >TableComponent</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in         <code><a href="../classes/TableComponent.html#source" target="_self" >TableComponent:26</a></code>
+</div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Options of the table.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="refreshEvent"></a>
+                        <b>refreshEvent</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter&lt;T[]&gt;</code>
+
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4" colspan="2">
+                                    <div class="io-line">Inherited from         <code><a href="../classes/TableComponent.html" target="_self" >TableComponent</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in         <code><a href="../classes/TableComponent.html#source" target="_self" >TableComponent:18</a></code>
+</div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Event received when table must be refreshed.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+    <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onSelect"></a>
+                        <b>onSelect</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter&lt;T[]&gt;</code>
+
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4" colspan="2">
+                                    <div class="io-line">Inherited from         <code><a href="../classes/TableComponent.html" target="_self" >TableComponent</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in         <code><a href="../classes/TableComponent.html#source" target="_self" >TableComponent:34</a></code>
+</div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Event emitted when element is selected by the user.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="applyFiltering"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            applyFiltering
+                        </b>
+                        <a href="#applyFiltering"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>applyFiltering(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="103"
+                            class="link-to-prism">projects/arhs-ui/src/lib/shared/components/lists/basic-table/basic-table.component.ts:103</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Refers to <a href="../classes/TableComponent.html">TableComponent</a></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>value</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="destroyData"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Protected</span>
+                            destroyData
+                        </b>
+                        <a href="#destroyData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>destroyData()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="72"
+                            class="link-to-prism">projects/arhs-ui/src/lib/shared/components/lists/basic-table/basic-table.component.ts:72</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Refers to <a href="../classes/TableComponent.html">TableComponent</a></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="displayedColumns"></a>
+                    <span class="name">
+                        <b>
+                            displayedColumns
+                        </b>
+                        <a href="#displayedColumns"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>displayedColumns()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="141"
+                            class="link-to-prism">projects/arhs-ui/src/lib/shared/components/lists/basic-table/basic-table.component.ts:141</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Refers to <a href="../classes/TableComponent.html">TableComponent</a></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>string[]</code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initData"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Protected</span>
+                            initData
+                        </b>
+                        <a href="#initData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>initData()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="81"
+                            class="link-to-prism">projects/arhs-ui/src/lib/shared/components/lists/basic-table/basic-table.component.ts:81</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Refers to <a href="../classes/TableComponent.html">TableComponent</a></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initTable"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            initTable
+                        </b>
+                        <a href="#initTable"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>initTable(element: T[])</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="154"
+                            class="link-to-prism">projects/arhs-ui/src/lib/shared/components/lists/basic-table/basic-table.component.ts:154</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Init the elements of the table.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>element</td>
+                                    <td>
+                                            <code>T[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>this.data</code>
+                                    </td>
+
+                                    <td>
+                                        <p>Elements of the table.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isAllSelected"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            isAllSelected
+                        </b>
+                        <a href="#isAllSelected"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>isAllSelected()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="120"
+                            class="link-to-prism">projects/arhs-ui/src/lib/shared/components/lists/basic-table/basic-table.component.ts:120</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>All the element are selected ?</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>True if all the elements are selected, false if not.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="masterToggle"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            masterToggle
+                        </b>
+                        <a href="#masterToggle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>masterToggle()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="112"
+                            class="link-to-prism">projects/arhs-ui/src/lib/shared/components/lists/basic-table/basic-table.component.ts:112</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Called when clicked on the master button for selection (header of the selection column).</p>
+<p>Clear selection if all selected; Select all element if not.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onElementSelected"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            onElementSelected
+                        </b>
+                        <a href="#onElementSelected"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onElementSelected(element: T)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="130"
+                            class="link-to-prism">projects/arhs-ui/src/lib/shared/components/lists/basic-table/basic-table.component.ts:130</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Called when user click on an element.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>element</td>
+                                    <td>
+                                            <code>T</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Selected element.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="refresh"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Protected</span>
+                            refresh
+                        </b>
+                        <a href="#refresh"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>refresh(newElements: T[])</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="93"
+                            class="link-to-prism">projects/arhs-ui/src/lib/shared/components/lists/basic-table/basic-table.component.ts:93</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Refers to <a href="../classes/TableComponent.html">TableComponent</a></p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>newElements</td>
+                                    <td>
+                                            <code>T[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="applyFiltering"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Abstract</span>
+                            applyFiltering
+                        </b>
+                        <a href="#applyFiltering"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>applyFiltering(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/TableComponent.html" target="_self" >TableComponent</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/TableComponent.html#source" target="_self" >TableComponent:116</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Apply a filter on the table.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>value</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Filter.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="destroyData"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Protected</span>
+                            <span class="modifier">Abstract</span>
+                            destroyData
+                        </b>
+                        <a href="#destroyData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>destroyData()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/TableComponent.html" target="_self" >TableComponent</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/TableComponent.html#source" target="_self" >TableComponent:67</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Called when destroying the table.</p>
+<p>Cleanings functions should be called here.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="displayedColumns"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            displayedColumns
+                        </b>
+                        <a href="#displayedColumns"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>displayedColumns()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/TableComponent.html" target="_self" >TableComponent</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/TableComponent.html#source" target="_self" >TableComponent:94</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Get the title of table&#39;s columns.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>string[]</code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initData"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Protected</span>
+                            <span class="modifier">Abstract</span>
+                            initData
+                        </b>
+                        <a href="#initData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>initData()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/TableComponent.html" target="_self" >TableComponent</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/TableComponent.html#source" target="_self" >TableComponent:60</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Called when initializing the table.</p>
+<p>Init the default properties and data for the table (Including subscription of events).</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <b>
+                            ngOnDestroy
+                        </b>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/TableComponent.html" target="_self" >TableComponent</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/TableComponent.html#source" target="_self" >TableComponent:83</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Implementation of ngOnDestroy() in <a href="OnDestroy">OnDestroy</a>.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/TableComponent.html" target="_self" >TableComponent</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/TableComponent.html#source" target="_self" >TableComponent:72</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Implementation of ngOnInit() in <a href="OnInit">OnInit</a>.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSelectElement"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            onSelectElement
+                        </b>
+                        <a href="#onSelectElement"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onSelectElement(elements: T[])</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/TableComponent.html" target="_self" >TableComponent</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/TableComponent.html#source" target="_self" >TableComponent:107</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Called when element of the table is selected.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>elements</td>
+                                    <td>
+                                            <code>T[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Current selected elements.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="refresh"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Protected</span>
+                            <span class="modifier">Abstract</span>
+                            refresh
+                        </b>
+                        <a href="#refresh"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>refresh(newElements: T[])</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Inherited from         <code><a href="../classes/TableComponent.html" target="_self" >TableComponent</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Defined in         <code><a href="../classes/TableComponent.html#source" target="_self" >TableComponent:53</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Refresh the table.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>newElements</td>
+                                    <td>
+                                            <code>T[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>New elements of the table.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dataSource"></a>
+                        <span class="name">
+                            <b>
+                            dataSource</b>
+                            <a href="#dataSource"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>MatTableDataSource&lt;T&gt;</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">projects/arhs-ui/src/lib/shared/components/lists/basic-table/basic-table.component.ts:43</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Correspond to the elements container for the table.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="expandedElement"></a>
+                        <span class="name">
+                            <b>
+                            expandedElement</b>
+                            <a href="#expandedElement"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>T | null</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">projects/arhs-ui/src/lib/shared/components/lists/basic-table/basic-table.component.ts:47</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Current expanded element.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="paginator"></a>
+                        <span class="name">
+                            <b>
+                            paginator</b>
+                            <a href="#paginator"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>MatPaginator</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(MatPaginator, {static: false})<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">projects/arhs-ui/src/lib/shared/components/lists/basic-table/basic-table.component.ts:51</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Correspond to the paginator object.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selection"></a>
+                        <span class="name">
+                            <b>
+                            selection</b>
+                            <a href="#selection"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>SelectionModel&lt;T&gt;</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new SelectionModel&lt;T&gt;(true, [])</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">projects/arhs-ui/src/lib/shared/components/lists/basic-table/basic-table.component.ts:39</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Correspond to the element selection.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="sort"></a>
+                        <span class="name">
+                            <b>
+                            sort</b>
+                            <a href="#sort"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>MatSort</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(MatSort, {static: false})<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">projects/arhs-ui/src/lib/shared/components/lists/basic-table/basic-table.component.ts:55</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Correspond to the sorting object.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="tableFactory"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            tableFactory</b>
+                            <a href="#tableFactory"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/ITableFactory.html" target="_self" >ITableFactory</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">projects/arhs-ui/src/lib/shared/components/lists/basic-table/basic-table.component.ts:35</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Refers to <a href="../interfaces/ITableFactory.html">ITableFactory</a></p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="refreshEventSubscription"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            refreshEventSubscription</b>
+                            <a href="#refreshEventSubscription"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Subscription</code>
+
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Inherited from         <code><a href="../classes/TableComponent.html" target="_self" >TableComponent</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in         <code><a href="../classes/TableComponent.html#source" target="_self" >TableComponent:39</a></code>
+</div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>RXJS subscription for refreshing event.</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+    <div class="tab-pane fade " id="c-readme">
+        <p><h1 id="usage-">Usage :</h1>
+<h3 id="description-">Description :</h3>
+<p>This component represent a generic table. 
+It should be implemented by any more specified table (like group-list), however it may be used without implementation.</p>
+<h3 id="instructions-">Instructions :</h3>
+<ol>
+<li><p>First, create the required inputs for the components :</p>
+<ul>
+<li>Options, </li>
+<li>Columns, </li>
+<li>An event for refreshing the table</li>
+<li>The data (Array of specified type).</li>
+<li>(Optional) Specify the function which will be called when an element was selected.</li>
+</ul>
+</li>
+<li><p>After, add the html component in your template, and set the required inputs.</p>
+</li>
+<li><p>Finally, add a @ViewChild() variable corresponding to the html component, and specify the data type.</p>
+</li>
+</ol>
+<h1 id="example-">Example :</h1>
+<ul>
+<li><h3 id="implementationhtml-">implementation.html :</h3>
+</li>
+</ul>
+<div><pre class="line-numbers"><code class="language-html">&lt;arhs-ui-basic-table #component [data]=&quot;data&quot; [columns]=&quot;componentColumns&quot; [options]=&quot;componentOptions&quot; [refreshEvent]=&quot;event&quot; (onSelect)=&quot;onSelectedElement($groups: Group[])&quot;&gt;&lt;/arhs-ui-basic-table&gt;</code></pre></div><ul>
+<li><h3 id="implementationts">implementation.ts</h3>
+</li>
+</ul>
+<div><pre class="line-numbers"><code class="language-typescript">import {TableFactoryService} from &#39;&#64;arhs/ui&#39;; 
+import {EventEmitter,ViewChild} from &#39;&#64;angular/core&#39;; 
+import {Group} from &#39;&#64;arhs/ui&#39;; 
+import {BasicTableComponent} from &#39;&#64;arhs/ui&#39;;
+
+&#64;ViewChild(&#39;component&#39;) component: BasicTableComponent&lt;Group&gt;;
+const event: EventEmitter&lt;Group[]&gt; = new EventEmitter&lt;Group[]&gt;();
+
+function implementComponent(tableFactory: TableFactoryService): void {
+    let data: Group[] = myService.getData();
+    let componentOptions = tableFactory.getOptions&lt;T&gt;([...]);
+    let componentColumns = tableFactory.getColumns([...])
+}
+
+function refreshTable(newElements: Group[]): void {
+    event.emit(newElements);
+}
+
+function onSelectedElement(groups: Group[]) {
+  // Do what you want with the groups
+}</code></pre></div></p>
+    </div>
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, ViewChild} from &#x27;@angular/core&#x27;;
+import {BasicTableCommon} from &#x27;./basic-table.common&#x27;;
+import {MatPaginator, MatSort, MatTableDataSource} from &#x27;@angular/material&#x27;;
+import {SelectionModel} from &#x27;@angular/cdk/collections&#x27;;
+import {animate, state, style, transition, trigger} from &#x27;@angular/animations&#x27;;
+import {ITableFactory} from &#x27;../../../services/ITableFactory&#x27;;
+import {TableFactoryService} from &#x27;../../../services/implementations/table-factory.service&#x27;;
+import {LoggerService} from &#x27;@arhs/core&#x27;;
+
+/**
+ * Generic table component for web platform.
+ */
+@Component({
+  selector: &#x27;arhs-ui-basic-table&#x27;,
+  templateUrl: &#x27;./basic-table.component.html&#x27;,
+  styles: [
+    &#x27;.mat-column-select {overflow: initial;}&#x27;,
+    &#x27;tr.detail-row {height: 0; border-bottom-width: 0px; border-top-width: 0px}&#x27;,
+    &#x27;.element-row td {border-bottom-width: 0;}&#x27;,
+    &#x27;.element-detail {overflow: hidden; display: flex;}&#x27;
+  ],
+  animations: [
+    trigger(&#x27;detailExpand&#x27;, [
+      state(&#x27;collapsed&#x27;, style({height: &#x27;0px&#x27;, minHeight: &#x27;0&#x27;})),
+      state(&#x27;expanded&#x27;, style({height: &#x27;*&#x27;})),
+      transition(&#x27;expanded &lt;&#x3D;&gt; collapsed&#x27;, animate(&#x27;225ms cubic-bezier(0.4, 0.0, 0.2, 1)&#x27;)),
+    ]),
+  ],
+})
+export class BasicTableComponent&lt;T&gt; extends BasicTableCommon&lt;T&gt; {
+
+  /**
+   * Refers to {@link ITableFactory}
+   */
+  private tableFactory: ITableFactory;
+  /**
+   * Correspond to the element selection.
+   */
+  selection: SelectionModel&lt;T&gt; &#x3D; new SelectionModel&lt;T&gt;(true, []);
+  /**
+   * Correspond to the elements container for the table.
+   */
+  dataSource: MatTableDataSource&lt;T&gt;;
+  /**
+   * Current expanded element.
+   */
+  expandedElement: T | null;
+  /**
+   * Correspond to the paginator object.
+   */
+  @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
+  /**
+   * Correspond to the sorting object.
+   */
+  @ViewChild(MatSort, {static: false}) sort: MatSort;
+
+  /**
+   * Constructor.
+   * @param tableFactory Refers to {@link ITableFactory}
+   * @param logger Refers to LoggerService in @arhs/core NPM package.
+   */
+  constructor(tableFactory: TableFactoryService,
+              logger: LoggerService) {
+    super(logger);
+    this.tableFactory &#x3D; tableFactory;
+    this.logger &#x3D; logger;
+  }
+
+  /**
+   * Refers to {@link TableComponent}
+   */
+  protected destroyData(): void {
+    if (this.options.selection) {
+      this.selection.changed.unsubscribe();
+    }
+  }
+
+  /**
+   * Refers to {@link TableComponent}
+   */
+  protected initData(): void {
+    if (this.options.selection) {
+      this.selection.changed.subscribe((value) &#x3D;&gt; {
+        this.onSelectElement(value.source.selected);
+      });
+    }
+    this.initTable();
+  }
+
+  /**
+   * Refers to {@link TableComponent}
+   */
+  protected refresh(newElements: T[]): void {
+    if (newElements) {
+      this.logger.debug(this, &#x27;Refresh generic table.&#x27;);
+      this.initTable(newElements);
+    }
+  }
+
+  /**
+   * Refers to {@link TableComponent}
+   */
+  public applyFiltering(value: string): void {
+    this.dataSource.filter &#x3D; value.trim().toLowerCase();
+  }
+
+  /**
+   * Called when clicked on the master button for selection (header of the selection column).
+   *
+   * Clear selection if all selected; Select all element if not.
+   */
+  public masterToggle(): void {
+    this.isAllSelected() ? this.selection.clear() : this.dataSource.data.forEach(row &#x3D;&gt; this.selection.select(row));
+  }
+
+  /**
+   * All the element are selected ?
+   * @return True if all the elements are selected, false if not.
+   */
+  public isAllSelected(): boolean {
+    const numSelected &#x3D; this.selection.selected.length;
+    const numRows &#x3D; this.dataSource.data.length;
+    return numSelected &#x3D;&#x3D;&#x3D; numRows;
+  }
+
+  /**
+   * Called when user click on an element.
+   * @param element Selected element.
+   */
+  public onElementSelected(element: T): void {
+    if (this.details) {
+      this.expandedElement &#x3D; this.expandedElement &#x3D;&#x3D;&#x3D; element ? null : element;
+    } else {
+      this.selection.toggle(element);
+    }
+  }
+
+  /**
+   * Refers to {@link TableComponent}
+   */
+  displayedColumns(): string[] {
+    const columns: string[] &#x3D; super.displayedColumns();
+    if (this.options.selection) {
+      columns.unshift(&#x27;_select&#x27;);
+    }
+    return columns;
+  }
+
+  /**
+   * Init the elements of the table.
+   *
+   * @param element Elements of the table.
+   */
+  private initTable(element: T[] &#x3D; this.data): void {
+    if (element) {
+      this.dataSource &#x3D; new MatTableDataSource&lt;T&gt;(element);
+
+      // Init paginating if enabled.
+      if (this.options.pagination) {
+        this.dataSource.paginator &#x3D; this.paginator;
+      }
+
+      // Init sorting if enabled.
+      if (this.options.sorting) {
+        this.dataSource.sort &#x3D; this.sort;
+      }
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;mat-elevation-z8&quot;&gt;
+  &lt;!-- Filter input --&gt;
+  &lt;mat-form-field *ngIf&#x3D;&quot;options.filtering&quot; style&#x3D;&quot;width: 100%&quot; class&#x3D;&quot;px-3 pt-3&quot;&gt;
+    &lt;mat-label&gt;Filter&lt;/mat-label&gt;
+    &lt;input #input matInput (keyup)&#x3D;&quot;applyFiltering(input.value)&quot; placeholder&#x3D;&quot;Ex: group 0, id 4,...&quot;&gt;
+  &lt;/mat-form-field&gt;
+  &lt;!-- Filter input --&gt;
+
+  &lt;table mat-table [dataSource]&#x3D;&quot;dataSource&quot; multiTemplateDataRows&#x3D;&quot;{{details}}&quot; matSort style&#x3D;&quot;width: 100%&quot;&gt;
+
+    &lt;!-- Header columns --&gt;
+    &lt;ng-container *ngFor&#x3D;&quot;let column of columns&quot;&gt;
+      &lt;ng-container matColumnDef&#x3D;&quot;{{column.id}}&quot;&gt;
+        &lt;ng-container *ngIf&#x3D;&quot;options.sorting else withoutSorting&quot;&gt;
+          &lt;th mat-header-cell *matHeaderCellDef mat-sort-header&gt;{{column.title}}&lt;/th&gt;
+        &lt;/ng-container&gt;
+
+        &lt;ng-template #withoutSorting&gt;
+          &lt;th mat-header-cell *matHeaderCellDef&gt;{{column.title}}&lt;/th&gt;
+        &lt;/ng-template&gt;
+
+        &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt; {{element[column.dataRef]}} &lt;/td&gt;
+
+        &lt;ng-container *ngIf&#x3D;&quot;options.footer&quot;&gt;
+          &lt;td mat-footer-cell *matFooterCellDef&gt;{{column.footer ? column.footer() : &#x27;&#x27;}}&lt;/td&gt;
+        &lt;/ng-container&gt;
+      &lt;/ng-container&gt;
+    &lt;/ng-container&gt;
+    &lt;!-- Header columns --&gt;
+
+    &lt;!-- Selection column --&gt;
+    &lt;ng-container *ngIf&#x3D;&quot;options.selection&quot;&gt;
+      &lt;ng-container matColumnDef&#x3D;&quot;_select&quot;&gt;
+        &lt;th mat-header-cell *matHeaderCellDef&gt;
+          &lt;mat-checkbox (change)&#x3D;&quot;$event ? masterToggle() : null&quot;
+                        [checked]&#x3D;&quot;selection.hasValue() &amp;&amp; isAllSelected()&quot;
+                        [indeterminate]&#x3D;&quot;selection.hasValue() &amp;&amp; !isAllSelected()&quot;&gt;
+          &lt;/mat-checkbox&gt;
+        &lt;/th&gt;
+        &lt;td mat-cell *matCellDef&#x3D;&quot;let row&quot;&gt;
+          &lt;mat-checkbox (click)&#x3D;&quot;$event.stopPropagation()&quot;
+                        (change)&#x3D;&quot;$event ? selection.toggle(row) : null&quot;
+                        [checked]&#x3D;&quot;selection.isSelected(row)&quot;&gt;
+          &lt;/mat-checkbox&gt;
+        &lt;/td&gt;
+        &lt;ng-container *ngIf&#x3D;&quot;options.footer&quot;&gt;
+          &lt;td mat-footer-cell *matFooterCellDef&gt;{{selection.selected.length}} selected&lt;/td&gt;
+        &lt;/ng-container&gt;
+      &lt;/ng-container&gt;
+    &lt;/ng-container&gt;
+    &lt;!-- Selection column --&gt;
+
+    &lt;!-- Expanded Content Column --&gt;
+    &lt;ng-container *ngIf&#x3D;&quot;details&quot;&gt;
+      &lt;ng-container matColumnDef&#x3D;&quot;_expendedDetails&quot;&gt;
+        &lt;td mat-cell *matCellDef&#x3D;&quot;let element&quot; [attr.colspan]&#x3D;&quot;details? columns.length + 1 : columns.length&quot; class&#x3D;&quot;w-100&quot;&gt;
+          &lt;div class&#x3D;&quot;element-detail&quot; [@detailExpand]&#x3D;&quot;element &#x3D;&#x3D; expandedElement ? &#x27;expanded&#x27; : &#x27;collapsed&#x27;&quot;&gt;
+            &lt;ng-container *ngTemplateOutlet&#x3D;&quot;details; context: {$implicit: element, element: element}&quot;&gt;&lt;/ng-container&gt;
+          &lt;/div&gt;
+        &lt;/td&gt;
+      &lt;/ng-container&gt;
+    &lt;/ng-container&gt;
+    &lt;!-- Expanded Content Column --&gt;
+
+    &lt;!-- &gt; Headers rows --&gt; &lt;tr mat-header-row *matHeaderRowDef&#x3D;&quot;displayedColumns(); sticky: options.stickyHeader&quot;&gt;&lt;/tr&gt;
+    &lt;!-- &gt; Data rows --&gt; &lt;tr mat-row *matRowDef&#x3D;&quot;let row; columns: displayedColumns();&quot; (click)&#x3D;&quot;onElementSelected(row)&quot; [class.element-row]&#x3D;&quot;details&quot;&gt;&lt;/tr&gt;
+    &lt;ng-container *ngIf&#x3D;&quot;options.footer&quot;&gt;
+      &lt;!-- &gt; Footer row --&gt;&lt;tr mat-footer-row *matFooterRowDef&#x3D;&quot;displayedColumns(); sticky: options.stickyFooter&quot;&gt;&lt;/tr&gt;
+    &lt;/ng-container&gt;
+    &lt;ng-container *ngIf&#x3D;&quot;details&quot;&gt;
+      &lt;!-- &gt; Details row --&gt;&lt;tr mat-row *matRowDef&#x3D;&quot;let row; columns: [&#x27;_expendedDetails&#x27;]&quot; class&#x3D;&quot;detail-row w-100&quot;&gt;&lt;/tr&gt;
+    &lt;/ng-container&gt;
+  &lt;/table&gt;
+
+  &lt;!-- Pagination support --&gt;
+  &lt;ng-container *ngIf&#x3D;&quot;options.pagination&quot;&gt;
+    &lt;mat-paginator [pageSizeOptions]&#x3D;&quot;options.paginationSorting&quot; showFirstLastButtons&gt;&lt;/mat-paginator&gt;
+  &lt;/ng-container&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+            <pre class="line-numbers"><code class="language-scss">.mat-column-select {overflow: initial;}
+tr.detail-row {height: 0; border-bottom-width: 0px; border-top-width: 0px}
+.element-row td {border-bottom-width: 0;}
+.element-detail {overflow: hidden; display: flex;}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="mat-elevation-z8">  <!-- Filter input -->  <mat-form-field *ngIf="options.filtering" style="width: 100%" class="px-3 pt-3">    <mat-label>Filter</mat-label>    <input #input matInput (keyup)="applyFiltering(input.value)" placeholder="Ex: group 0, id 4,...">  </mat-form-field>  <!-- Filter input -->  <table mat-table [dataSource]="dataSource" multiTemplateDataRows="{{details}}" matSort style="width: 100%">    <!-- Header columns -->    <ng-container *ngFor="let column of columns">      <ng-container matColumnDef="{{column.id}}">        <ng-container *ngIf="options.sorting else withoutSorting">          <th mat-header-cell *matHeaderCellDef mat-sort-header>{{column.title}}</th>        </ng-container>        <ng-template #withoutSorting>          <th mat-header-cell *matHeaderCellDef>{{column.title}}</th>        </ng-template>        <td mat-cell *matCellDef="let element"> {{element[column.dataRef]}} </td>        <ng-container *ngIf="options.footer">          <td mat-footer-cell *matFooterCellDef>{{column.footer ? column.footer() : \'\'}}</td>        </ng-container>      </ng-container>    </ng-container>    <!-- Header columns -->    <!-- Selection column -->    <ng-container *ngIf="options.selection">      <ng-container matColumnDef="_select">        <th mat-header-cell *matHeaderCellDef>          <mat-checkbox (change)="$event ? masterToggle() : null"                        [checked]="selection.hasValue() && isAllSelected()"                        [indeterminate]="selection.hasValue() && !isAllSelected()">          </mat-checkbox>        </th>        <td mat-cell *matCellDef="let row">          <mat-checkbox (click)="$event.stopPropagation()"                        (change)="$event ? selection.toggle(row) : null"                        [checked]="selection.isSelected(row)">          </mat-checkbox>        </td>        <ng-container *ngIf="options.footer">          <td mat-footer-cell *matFooterCellDef>{{selection.selected.length}} selected</td>        </ng-container>      </ng-container>    </ng-container>    <!-- Selection column -->    <!-- Expanded Content Column -->    <ng-container *ngIf="details">      <ng-container matColumnDef="_expendedDetails">        <td mat-cell *matCellDef="let element" [attr.colspan]="details? columns.length + 1 : columns.length" class="w-100">          <div class="element-detail" [@detailExpand]="element == expandedElement ? \'expanded\' : \'collapsed\'">            <ng-container *ngTemplateOutlet="details; context: {$implicit: element, element: element}"></ng-container>          </div>        </td>      </ng-container>    </ng-container>    <!-- Expanded Content Column -->    <!-- > Headers rows --> <tr mat-header-row *matHeaderRowDef="displayedColumns(); sticky: options.stickyHeader"></tr>    <!-- > Data rows --> <tr mat-row *matRowDef="let row; columns: displayedColumns();" (click)="onElementSelected(row)" [class.element-row]="details"></tr>    <ng-container *ngIf="options.footer">      <!-- > Footer row --><tr mat-footer-row *matFooterRowDef="displayedColumns(); sticky: options.stickyFooter"></tr>    </ng-container>    <ng-container *ngIf="details">      <!-- > Details row --><tr mat-row *matRowDef="let row; columns: [\'_expendedDetails\']" class="detail-row w-100"></tr>    </ng-container>  </table>  <!-- Pagination support -->  <ng-container *ngIf="options.pagination">    <mat-paginator [pageSizeOptions]="options.paginationSorting" showFirstLastButtons></mat-paginator>  </ng-container></div></div>'
+    var COMPONENTS = [{'name': 'BasicTableComponent', 'selector': 'arhs-ui-basic-table'},{'name': 'BasicTableComponent', 'selector': 'arhs-ui-basic-table'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'BasicTableComponent-1'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'BasicTableComponent-1.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

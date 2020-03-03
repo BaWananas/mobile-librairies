@@ -4,11 +4,17 @@ import {MatCheckboxModule, MatFormFieldModule, MatInputModule, MatPaginatorModul
 import {BasicCardComponent} from './components/singles/basic-card/basic-card.component';
 import {BasicTableComponent} from './components/lists/basic-table/basic-table.component';
 
+/**
+ * Component declaration of the module.
+ */
 const DECLARATION = [
   BasicTableComponent,
   BasicCardComponent,
 ];
 
+/**
+ * Shared module - Web version.
+ */
 @NgModule({
   declarations: [
     DECLARATION,

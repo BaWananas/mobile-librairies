@@ -1,8 +1,18 @@
+/**
+ * Represent HATEOAS links.
+ */
 export class HypermediaLinks {
-    self: {
-        href: string
-    };
-    [s: string]: {
-        href: string
-    }
+  /**
+   * Link pointing the requested resource.
+   */
+  self: {
+    href: string
+  };
+
+  /**
+   * Various other links depending on the API and responses.
+   */
+  [s: string]: {
+    href: string
+  }
 }

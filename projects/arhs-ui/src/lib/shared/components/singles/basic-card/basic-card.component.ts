@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {BasicCardCommon} from './basic-card.common';
 
-// TODO
+/**
+ * TODO - For future version
+ * @ignore
+ */
 @Component({
   selector: 'arhs-ui-basic-card',
   templateUrl: './basic-card.component.html',
