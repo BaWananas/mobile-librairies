@@ -11,18 +11,18 @@
     <!-- Header columns -->
     <ng-container *ngFor="let column of columns">
       <ng-container matColumnDef="{{column.id}}">
-        <ng-container *ngIf="options.sorting else withoutSorting" class="{{(styles)? styles.arrayToString(styles.headerContainer) : ''}}">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header class="{{(styles)? styles.arrayToString(styles.headerText) : ''}}">{{column.title}}</th>
+        <ng-container *ngIf="options.sorting else withoutSorting">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="{{(styles)? styles.arrayToString(styles.headerText) + ' ' + styles.arrayToString(styles.headerContainer) : ''}}">{{column.title}}</th>
         </ng-container>
 
-        <ng-template #withoutSorting class="{{(styles)? styles.arrayToString(styles.headerContainer) : ''}}">
-          <th mat-header-cell *matHeaderCellDef class="{{(styles)? styles.arrayToString(styles.headerText) : ''}}">{{column.title}}</th>
+        <ng-template #withoutSorting>
+          <th mat-header-cell *matHeaderCellDef class="{{(styles)? styles.arrayToString(styles.headerText) + ' ' + styles.arrayToString(styles.headerContainer) : ''}}">{{column.title}}</th>
         </ng-template>
 
         <td mat-cell *matCellDef="let element" class="{{(styles)? styles.arrayToString(styles.rowText) : ''}}"> {{element[column.dataRef]}} </td>
 
-        <ng-container *ngIf="options.footer" class="{{(styles)? styles.arrayToString(styles.footerContainer) : ''}}">
-          <td mat-footer-cell *matFooterCellDef class="{{(styles)? styles.arrayToString(styles.footerText) : ''}}">{{column.footer ? column.footer() : ''}}</td>
+        <ng-container *ngIf="options.footer">
+          <td mat-footer-cell *matFooterCellDef class="{{(styles)? styles.arrayToString(styles.footerText) + '' +styles.arrayToString(styles.footerContainer) : ''}}">{{column.footer ? column.footer() : ''}}</td>
         </ng-container>
       </ng-container>
     </ng-container>
@@ -43,8 +43,8 @@
                         [checked]="selection.isSelected(row)">
           </mat-checkbox>
         </td>
-        <ng-container *ngIf="options.footer" class="{{(styles)? styles.arrayToString(styles.footerContainer) : ''}}">
-          <td mat-footer-cell *matFooterCellDef class="{{(styles)? styles.arrayToString(styles.footerText) : ''}}">{{selection.selected.length}} selected</td>
+        <ng-container *ngIf="options.footer">
+          <td mat-footer-cell *matFooterCellDef class="{{(styles)? styles.arrayToString(styles.footerText) + '' +styles.arrayToString(styles.footerContainer) : ''}}">{{selection.selected.length}} selected</td>
         </ng-container>
       </ng-container>
     </ng-container>
