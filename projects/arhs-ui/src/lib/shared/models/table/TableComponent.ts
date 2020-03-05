@@ -3,6 +3,7 @@ import {TableOptions} from './TableOptions';
 import {TableColumn} from './TableColumn';
 import {ILoggerService} from '@arhs/core';
 import {Subscription} from 'rxjs';
+import {ITableStyles} from './ITableStyles';
 
 /**
  * Interface to define the default properties and behaviors of every tables.
@@ -28,6 +29,10 @@ export abstract class TableComponent<T> implements OnInit, OnDestroy {
    * (Optional) Detail template to display when user click on element.
    */
   @Input() details: TemplateRef<any>;
+  /**
+   * Optional styles of the table.
+   */
+  @Input() styles: ITableStyles;
   /**
    * Event emitted when element is selected by the user.
    */

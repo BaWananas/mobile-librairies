@@ -108,6 +108,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="classes/TableOptions.html" data-type="entity-link">TableOptions</a>
                             </li>
                             <li class="link">
+                                <a href="classes/TableStyles.html" data-type="entity-link">TableStyles</a>
+                            </li>
+                            <li class="link">
                                 <a href="classes/TapAnimation.html" data-type="entity-link">TapAnimation</a>
                             </li>
                         </ul>
@@ -150,6 +153,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="interfaces/ITableOptions.html" data-type="entity-link">ITableOptions</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/ITableStyles.html" data-type="entity-link">ITableStyles</a>
                             </li>
                         </ul>
                     </li>

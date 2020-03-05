@@ -12,6 +12,8 @@ export * from './models/table/TableOptions';
 export * from './models/table/TableColumn';
 export * from './models/table/ITableColumn';
 export * from './models/table/ITableOptions';
+export * from './models/table/ITableStyles';
+export * from './models/table/TableStyles';
 // > Table > Types
 export * from './models/table/types/FooterValue';
 export * from './models/table/types/TableSelection';

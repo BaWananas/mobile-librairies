@@ -1,6 +1,7 @@
 import {ITableColumn} from '../models/table/ITableColumn';
 import {ITableOptions} from '../models/table/ITableOptions';
 import {FooterValue} from '../models/table/types/FooterValue';
+import {ITableStyles} from '../models/table/ITableStyles';
 
 /**
  * Factory for table elements (used to build a table component).
