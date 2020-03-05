@@ -4,6 +4,7 @@ import {TableColumn} from './TableColumn';
 import {ILoggerService} from '@arhs/core';
 import {Subscription} from 'rxjs';
 import {ITableStyles} from './ITableStyles';
+import {TableStyles} from './TableStyles';
 
 /**
  * Interface to define the default properties and behaviors of every tables.
@@ -32,7 +33,7 @@ export abstract class TableComponent<T> implements OnInit, OnDestroy {
   /**
    * Optional styles of the table.
    */
-  @Input() styles: ITableStyles;
+  @Input() styles: ITableStyles = new TableStyles();
   /**
    * Event emitted when element is selected by the user.
    */

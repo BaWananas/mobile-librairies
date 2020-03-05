@@ -5,50 +5,90 @@ export interface ITableStyles {
   /**
    * The table container.
    */
-  tableContainer: string[];
+  _tableContainer: string[];
   /**
    * The filtering container.
    */
-  filterContainer: string[];
+  _filterContainer: string[];
   /**
    * The filtering input.
    */
-  filterInput: string[];
+  _filterInput: string[];
   /**
    * The selection related container.
    */
-  selectionContainer: string[];
+  _selectionContainer: string[];
   /**
    * The pagination related container.
    */
-  paginationContainer: string[];
+  _paginationContainer: string[];
   /**
    * Header's containers of the table (e.g. Groups)
    */
-  headerContainer: string[];
+  _headerContainer: string[];
   /**
    * Header's texts of the table.
    */
-  headerText: string[];
+  _headerText: string[];
   /**
    * Row's containers of the table.
    */
-  rowContainer: string[];
+  _rowContainer: string[];
   /**
    * Row's texts of the table.
    */
-  rowText: string[];
+  _rowText: string[];
   /**
    * The footer container of the table.
    */
-  footerContainer: string[];
+  _footerContainer: string[];
   /**
    * The footer text of the table.
    */
-  footerText: string[];
+  _footerText: string[];
 
   /**
-   * Convert an array containing styles into a string.
+   * Accessor to directly get the string value of the styles.
    */
-  arrayToString(array: string[]): string;
+  tableContainer(): string;
+  /**
+   * Accessor to directly get the string value of the styles.
+   */
+  filterContainer(): string;
+  /**
+   * Accessor to directly get the string value of the styles.
+   */
+  filterInput(): string;
+  /**
+   * Accessor to directly get the string value of the styles.
+   */
+  selectionContainer(): string;
+  /**
+   * Accessor to directly get the string value of the styles.
+   */
+  paginationContainer(): string;
+  /**
+   * Accessor to directly get the string value of the styles.
+   */
+  headerContainer(): string;
+  /**
+   * Accessor to directly get the string value of the styles.
+   */
+  headerText(): string;
+  /**
+   * Accessor to directly get the string value of the styles.
+   */
+  rowContainer(): string;
+  /**
+   * Accessor to directly get the string value of the styles.
+   */
+  rowText(): string;
+  /**
+   * Accessor to directly get the string value of the styles.
+   */
+  footerContainer(): string;
+  /**
+   * Accessor to directly get the string value of the styles.
+   */
+  footerText(): string;
 }

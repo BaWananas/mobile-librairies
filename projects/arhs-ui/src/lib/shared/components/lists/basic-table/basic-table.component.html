@@ -1,28 +1,28 @@
 <div class="mat-elevation-z8">
   <!-- Filter input -->
-  <mat-form-field *ngIf="options.filtering" style="width: 100%" class="px-3 pt-3 {{(styles)? styles.arrayToString(styles.filterContainer) : ''}}">
+  <mat-form-field *ngIf="options.filtering" style="width: 100%" class="px-3 pt-3" [ngClass]="styles.filterContainer()">
     <mat-label>Filter</mat-label>
-    <input #input matInput (keyup)="applyFiltering(input.value)" placeholder="Ex: group 0, id 4,..." class="{{(styles)? styles.arrayToString(styles.filterInput) : ''}}">
+    <input #input matInput (keyup)="applyFiltering(input.value)" placeholder="Ex: group 0, id 4,..." [ngClass]="styles.filterInput()">
   </mat-form-field>
   <!-- Filter input -->
 
-  <table mat-table [dataSource]="dataSource" multiTemplateDataRows="{{details}}" matSort style="width: 100%" class="{{(styles)? styles.arrayToString(styles.tableContainer) : ''}}">
+  <table mat-table [dataSource]="dataSource" multiTemplateDataRows="{{details}}" matSort style="width: 100%" [ngClass]="styles.tableContainer()">
 
     <!-- Header columns -->
     <ng-container *ngFor="let column of columns">
       <ng-container matColumnDef="{{column.id}}">
         <ng-container *ngIf="options.sorting else withoutSorting">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header class="{{(styles)? styles.arrayToString(styles.headerText) + ' ' + styles.arrayToString(styles.headerContainer) : ''}}">{{column.title}}</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header [ngClass]="[styles.headerContainer(), styles.headerText()]">{{column.title}}</th>
         </ng-container>
 
         <ng-template #withoutSorting>
-          <th mat-header-cell *matHeaderCellDef class="{{(styles)? styles.arrayToString(styles.headerText) + ' ' + styles.arrayToString(styles.headerContainer) : ''}}">{{column.title}}</th>
+          <th mat-header-cell *matHeaderCellDef [ngClass]="[styles.headerContainer(), styles.headerText()]">{{column.title}}</th>
         </ng-template>
 
-        <td mat-cell *matCellDef="let element" class="{{(styles)? styles.arrayToString(styles.rowText) : ''}}"> {{element[column.dataRef]}} </td>
+        <td mat-cell *matCellDef="let element" [ngClass]="styles.rowText()"> {{element[column.dataRef]}} </td>
 
         <ng-container *ngIf="options.footer">
-          <td mat-footer-cell *matFooterCellDef class="{{(styles)? styles.arrayToString(styles.footerText) + '' +styles.arrayToString(styles.footerContainer) : ''}}">{{column.footer ? column.footer() : ''}}</td>
+          <td mat-footer-cell *matFooterCellDef [ngClass]="[styles.footerContainer(), styles.footerText()]">{{column.footer ? column.footer() : ''}}</td>
         </ng-container>
       </ng-container>
     </ng-container>
@@ -31,20 +31,20 @@
     <!-- Selection column -->
     <ng-container *ngIf="options.selection">
       <ng-container matColumnDef="_select">
-        <th mat-header-cell *matHeaderCellDef class="{{(styles)? styles.arrayToString(styles.selectionContainer) : ''}}">
+        <th mat-header-cell *matHeaderCellDef [ngClass]="styles.selectionContainer()">
           <mat-checkbox (change)="$event ? masterToggle() : null"
                         [checked]="selection.hasValue() && isAllSelected()"
                         [indeterminate]="selection.hasValue() && !isAllSelected()">
           </mat-checkbox>
         </th>
-        <td mat-cell *matCellDef="let row" class="{{(styles)? styles.arrayToString(styles.selectionContainer) : ''}}">
+        <td mat-cell *matCellDef="let row" [ngClass]="styles.selectionContainer()">
           <mat-checkbox (click)="$event.stopPropagation()"
                         (change)="$event ? selection.toggle(row) : null"
                         [checked]="selection.isSelected(row)">
           </mat-checkbox>
         </td>
         <ng-container *ngIf="options.footer">
-          <td mat-footer-cell *matFooterCellDef class="{{(styles)? styles.arrayToString(styles.footerText) + '' +styles.arrayToString(styles.footerContainer) : ''}}">{{selection.selected.length}} selected</td>
+          <td mat-footer-cell *matFooterCellDef [ngClass]="[styles.footerContainer(), styles.footerText()]">{{selection.selected.length}} selected</td>
         </ng-container>
       </ng-container>
     </ng-container>
@@ -62,10 +62,10 @@
     </ng-container>
     <!-- Expanded Content Column -->
 
-    <!-- > Headers rows --> <tr mat-header-row *matHeaderRowDef="displayedColumns(); sticky: options.stickyHeader" class="{{(styles)? styles.arrayToString(styles.headerContainer) : ''}}"></tr>
-    <!-- > Data rows --> <tr mat-row *matRowDef="let row; columns: displayedColumns();" (click)="onElementSelected(row)" [class.element-row]="details" class="{{(styles)? styles.arrayToString(styles.rowContainer) : ''}}"></tr>
+    <!-- > Headers rows --> <tr mat-header-row *matHeaderRowDef="displayedColumns(); sticky: options.stickyHeader" [ngClass]="styles.headerContainer()"></tr>
+    <!-- > Data rows --> <tr mat-row *matRowDef="let row; columns: displayedColumns();" (click)="onElementSelected(row)" [class.element-row]="details" [ngClass]="styles.rowContainer()"></tr>
     <ng-container *ngIf="options.footer">
-      <!-- > Footer row --><tr mat-footer-row *matFooterRowDef="displayedColumns(); sticky: options.stickyFooter" class="{{(styles)? styles.arrayToString(styles.footerContainer) : ''}}"></tr>
+      <!-- > Footer row --><tr mat-footer-row *matFooterRowDef="displayedColumns(); sticky: options.stickyFooter" [ngClass]="styles.footerContainer()"></tr>
     </ng-container>
     <ng-container *ngIf="details">
       <!-- > Details row --><tr mat-row *matRowDef="let row; columns: ['_expendedDetails']" class="detail-row w-100"></tr>
@@ -74,6 +74,6 @@
 
   <!-- Pagination support -->
   <ng-container *ngIf="options.pagination">
-    <mat-paginator [pageSizeOptions]="options.paginationSorting" showFirstLastButtons class="{{(styles)? styles.arrayToString(styles.paginationContainer) : ''}}"></mat-paginator>
+    <mat-paginator [pageSizeOptions]="options.paginationSorting" showFirstLastButtons [ngClass]="styles.paginationContainer()"></mat-paginator>
   </ng-container>
 </div>

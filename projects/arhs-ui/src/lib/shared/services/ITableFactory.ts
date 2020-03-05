@@ -40,4 +40,23 @@ export interface ITableFactory {
    * @return ITableColumn[] Get an object encapsulating columns header and footer.
    */
   getColumns(columnsTitle: string[], dataRef: string[], footers?: FooterValue[]): ITableColumn[];
+
+  /**
+   * Get an object encapsulating CSS class for a table.
+   * @param styles The customizable styles. Only CSS class accepted.
+   * @returns ITableStyles The object encapsulating styles class.
+   */
+  getStyles(styles: {
+    tableContainer?: string[];
+    filterContainer?: string[];
+    filterInput?: string[];
+    selectionContainer?: string[];
+    paginationContainer?: string[];
+    headerContainer?: string[];
+    headerText?: string[];
+    rowContainer?: string[];
+    rowText?: string[];
+    footerContainer?: string[];
+    footerText?: string[];
+  }): ITableStyles;
 }

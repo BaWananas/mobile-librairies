@@ -5,6 +5,8 @@ import {ITableColumn} from '../../models/table/ITableColumn';
 import {TableColumn} from '../../models/table/TableColumn';
 import {ITableOptions} from '../../models/table/ITableOptions';
 import {TableOptions} from '../../models/table/TableOptions';
+import {ITableStyles} from '../../models/table/ITableStyles';
+import {TableStyles} from '../../models/table/TableStyles';
 
 /**
  * Implementation of {@link ITableFactory}.
@@ -52,5 +54,36 @@ export class TableFactoryService implements ITableFactory {
       sorting,
       filtering,
       selection);
+  }
+
+  /**
+   * Refers to {@link ITableFactory}
+   */
+  getStyles(styles: {
+    tableContainer?: string[];
+    filterContainer?: string[];
+    filterInput?: string[];
+    selectionContainer?: string[];
+    paginationContainer?: string[];
+    headerContainer?: string[];
+    headerText?: string[];
+    rowContainer?: string[];
+    rowText?: string[];
+    footerContainer?: string[];
+    footerText?: string[]
+  }): ITableStyles {
+    return new TableStyles(
+      styles.filterContainer,
+      styles.filterInput,
+      styles.footerContainer,
+      styles.footerText,
+      styles.headerContainer,
+      styles.headerText,
+      styles.paginationContainer,
+      styles.rowContainer,
+      styles.rowText,
+      styles.selectionContainer,
+      styles.tableContainer
+    );
   }
 }
