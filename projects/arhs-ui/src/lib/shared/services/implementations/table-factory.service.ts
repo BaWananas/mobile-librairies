@@ -38,22 +38,25 @@ export class TableFactoryService implements ITableFactory {
   /**
    * Refers to {@link ITableFactory}
    */
-  getOptions<T>(footer?: boolean,
-                stickyHeader?: boolean,
-                stickyFooter?: boolean,
-                pagination?: boolean,
-                paginationSorting?: number[],
-                sorting?: boolean,
-                filtering?: boolean,
-                selection?: boolean): ITableOptions<T> {
-    return new TableOptions(footer,
-      stickyHeader,
-      stickyFooter,
-      pagination,
-      paginationSorting,
-      sorting,
-      filtering,
-      selection);
+  getOptions<T>(options: {
+    footer?: boolean,
+    stickyHeader?: boolean,
+    stickyFooter?: boolean,
+    pagination?: boolean,
+    paginationSorting?: number[],
+    sorting?: boolean,
+    filtering?: boolean,
+    selection?: boolean
+  }): ITableOptions<T> {
+    return new TableOptions(
+      options.footer,
+      options.stickyHeader,
+      options.stickyFooter,
+      options.pagination,
+      options.paginationSorting,
+      options.sorting,
+      options.filtering,
+      options.selection);
   }
 
   /**
