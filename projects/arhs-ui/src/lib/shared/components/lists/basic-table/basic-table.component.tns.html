@@ -1,13 +1,13 @@
 <ScrollView height="100%" orientation="vertical" *ngIf="data">
-      <GridLayout margin="20" padding="10" borderColor="#d3d3d3" borderWidth="2" borderRadius="3" [columns]="columnsToStringValue()" [rows]="rowsToStringValue()" [ngClass]="styles.tableContainer()">
+      <GridLayout padding="10" borderColor="#d3d3d3" borderWidth="2" borderRadius="3" [columns]="columnsToStringValue()" [rows]="rowsToStringValue()" [ngClass]="styles.tableContainer()">
 
-        <Label *ngFor="let column of columns; let index = index" class="h4" text="{{column.title}}" row="0" col="{{index}}" [ngClass]="[styles.headerContainer(), styles.headerText()]"></Label>
-        <Label *ngIf="details" class="h4" text="" row="0" col="{{columns.length}}" [ngClass]="styles.headerContainer()"></Label>
+        <Label textWrap="true" [marginRight]="(index === columns.length) ? 0 : 15" *ngFor="let column of columns; let index = index" class="h4" text="{{column.title}}" row="0" col="{{index}}" [ngClass]="[styles.headerContainer(), styles.headerText()]"></Label>
+        <Label textWrap="true" *ngIf="details" class="h4" text="" row="0" col="{{columns.length}}" [ngClass]="styles.headerContainer()"></Label>
 
         <StackLayout marginTop="4" marginBottom="4" class="hr" row="1" colSpan="4"></StackLayout>
 
         <ng-container *ngFor="let element of data; let index = index; let last = last">
-            <Label *ngFor="let column of columns; let colIndex = index" row="{{(index*2)+2}}" col="{{colIndex}}" class="body" text="{{element[column.dataRef]}}" [ngClass]="[styles.rowContainer(), styles.rowText()]"></Label>
+            <Label textWrap="true" *ngFor="let column of columns; let colIndex = index" row="{{(index*2)+2}}" col="{{colIndex}}" class="body" text="{{this.formatElement(element[column.dataRef], column)}}" [ngClass]="[styles.rowContainer(), styles.rowText()]"></Label>
 
           <FlexboxLayout *ngIf="details" row="{{(index*2)+2}}" col="{{columns.length}}" verticalAlignment="middle" alignItems="center" justifyContent="center">
             <ng-container *ngTemplateOutlet="details; context: {$implicit: element, element: element}"></ng-container>
@@ -19,7 +19,7 @@
         <ng-container *ngIf="options.footer">
           <StackLayout marginTop="4" marginBottom="4" class="hr" row="{{getInitialRowsFooterIndex()}}" colSpan="4"></StackLayout>
           <ng-container *ngFor="let column of columns; let index = index">
-            <Label *ngIf="column.footer" class="body" text="{{column.footer()}}" row="{{getInitialRowsFooterIndex()+1}}" col="{{index}}" [ngClass]="[styles.footerContainer(), styles.footerText()]"></Label>
+            <Label textWrap="true" *ngIf="column.footer" class="body" text="{{this.formatElement(column.footer(), column)}}" row="{{getInitialRowsFooterIndex()+1}}" col="{{index}}" [ngClass]="[styles.footerContainer(), styles.footerText()]"></Label>
           </ng-container>
         </ng-container>
 

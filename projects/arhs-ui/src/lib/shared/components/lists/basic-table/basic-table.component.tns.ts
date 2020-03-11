@@ -3,6 +3,7 @@ import {BasicTableCommon} from './basic-table.common';
 import {NavigationBarVisibility} from '@nativescript/core/ui/enums';
 import auto = NavigationBarVisibility.auto;
 import {LoggerService} from '@arhs/core';
+import {ITableColumn} from '../../../models/table/ITableColumn';
 
 /**
  * Generic table component for mobile platform.
@@ -48,13 +49,23 @@ export class BasicTableComponent<T> extends BasicTableCommon<T> {
   }
 
   /**
+   * Format element content.
+   * @param element The element content.
+   * @param column The column corresponding to the element.
+   */
+  public formatElement(element: string, column: ITableColumn): string {
+    if (element && column && column.title && element.length > (1.5 * column.title.length)) {
+      return element.slice(0, (1.5 * column.title.length)) + '..';
+    } else {
+      return element;
+    }
+  }
+
+  /**
    * Used to get the specific columns sizing for GridLayout
    */
   public columnsToStringValue(): string {
     let columns = '';
-    if (this.details) {
-      columns += 'auto,';
-    }
     this.columns.forEach((value, index) => {
       if (index === 0) {
         columns += 'auto';
@@ -62,6 +73,9 @@ export class BasicTableComponent<T> extends BasicTableCommon<T> {
         columns += ',auto';
       }
     });
+    if (this.details) {
+      columns += ',*';
+    }
     return columns;
   }
 
